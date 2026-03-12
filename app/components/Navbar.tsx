@@ -10,7 +10,7 @@ export default function Navbar() {
 
     return (
         <nav
-            className="flex items-center justify-between"
+            className="flex items-center justify-between w-full"
             style={{
                 height: "56px",
                 backgroundColor: "#0a0a0a",
@@ -18,6 +18,7 @@ export default function Navbar() {
                 transition: "background-color 0.3s ease, border-color 0.3s ease",
             }}
         >
+          <div className="flex items-center justify-between w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-24">
             {/* Logo / Name */}
             <span
                 className="font-bold text-base tracking-tight select-none"
@@ -56,6 +57,7 @@ export default function Navbar() {
                     </a>
                 ))}
             </div>
+          </div>
         </nav>
     );
 }

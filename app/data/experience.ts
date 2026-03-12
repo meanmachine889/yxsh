@@ -1,7 +1,7 @@
 export const experiences = [
   {
     slug: "integral",
-    company: "Integral",
+    company: "Integral Development Corp.",
     date: "May 2025 \u2013 Present",
     role: "Software Developer",
     location: "Palo Alto, California, USA (Remote)",
