@@ -2,6 +2,8 @@
 
 export default function Navbar() {
 
+    const RESUME_URL = "https://drive.google.com/file/d/1gcJPKYqwmLngCaruuUED1utYBywRZB6k/view?usp=drive_link";
+
     const navLinks = [
         { label: "about", href: "#about" },
         { label: "experience", href: "#experience" },
@@ -14,7 +16,6 @@ export default function Navbar() {
             style={{
                 height: "56px",
                 backgroundColor: "#0a0a0a",
-                borderBottom: `1px solid rgba(255,255,255,0.05)`,
                 transition: "background-color 0.3s ease, border-color 0.3s ease",
             }}
         >
@@ -56,6 +57,14 @@ export default function Navbar() {
                         {link.label}
                     </a>
                 ))}
+                <a
+                    href={RESUME_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs border border-[#444444] hover:border-white text-[#aaaaaa] hover:text-white transition-colors px-3 py-1 rounded font-[family-name:var(--font-geist-mono)]"
+                >
+                    resume
+                </a>
             </div>
           </div>
         </nav>

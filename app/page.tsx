@@ -3,6 +3,7 @@ import WorkExperience from "./components/WorkExperience";
 import Skills from "./components/Skills";
 import Achievements from "./components/Achievements";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
