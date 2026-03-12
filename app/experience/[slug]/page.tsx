@@ -47,7 +47,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
   }
 
   return (
-    <main className="bg-[#0a0a0a] min-h-screen w-full text-white flex flex-col items-center px-6 py-16 sm:px-10 lg:px-8 pt-20 sm:pt-24 font-[family-name:var(--font-geist-sans)]">
+    <main className="bg-[#0a0a0a] min-h-screen w-full text-white flex flex-col items-center px-6 py-16 sm:px-10 lg:px-8 md:pt-20 pt-24 font-[family-name:var(--font-geist-sans)]">
       <div className="max-w-6xl px-0 sm:px-4 lg:px-8 w-full">
         <Link
           href="/"

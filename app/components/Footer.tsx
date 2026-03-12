@@ -48,7 +48,7 @@ export default function Footer() {
 
         {/* Red Bull Image */}
         <div
-          className="relative flex-shrink-0 w-24 h-32 sm:w-32 sm:h-44 rounded-2xl overflow-hidden cursor-pointer"
+          className="relative flex-shrink-0 w-28 h-44 sm:w-35 sm:h-60 rounded-2xl overflow-hidden cursor-pointer"
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}

@@ -7,6 +7,7 @@ export default function Navbar() {
     const navLinks = [
         { label: "about", href: "#about" },
         { label: "experience", href: "#experience" },
+        { label: "projects", href: "/projects" },
         { label: "contact", href: "#contact" },
     ];
 
@@ -21,16 +22,18 @@ export default function Navbar() {
         >
           <div className="flex items-center justify-between w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-24">
             {/* Logo / Name */}
-            <span
+            <a
+                href="/"
                 className="font-bold text-base tracking-tight select-none"
                 style={{
                     fontFamily: "var(--font-geist-sans)",
                     color: "#ffffff",
                     transition: "color 0.3s ease",
+                    textDecoration: "none",
                 }}
             >
                 yash
-            </span>
+            </a>
 
             {/* Right side: nav links + theme toggle */}
             <div className="flex items-center gap-6">
