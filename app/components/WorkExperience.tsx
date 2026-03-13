@@ -7,7 +7,7 @@ import { experiences } from "@/app/data/experience";
 
 export default function WorkExperience() {
   return (
-    <section className="bg-[#0a0a0a] w-full py-12 border-t border-dashed border-[#333333] sm:py-16 lg:py-20 text-white flex justify-center font-[family-name:var(--font-geist-sans)]">
+    <section className="bg-black w-full py-12 border-t border-dashed border-[#333333] sm:py-16 lg:py-20 text-white flex justify-center font-[family-name:var(--font-geist-sans)]">
       <div className="w-full flex flex-col">
         <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight text-white mb-8 sm:mb-10">
           Experience

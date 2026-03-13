@@ -35,7 +35,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="bg-[var(--bg-primary)] max-w-7xl h-screen w-full text-[#cccccc] flex items-center justify-center px-6 sm:px-10 md:pt-0 pt-24 lg:px-24 overflow-hidden font-[family-name:var(--font-geist-sans)]" style={{ transition: "background-color 0.3s ease, color 0.3s ease" }}>
+    <section className="bg-black max-w-7xl h-screen w-full text-[#cccccc] flex items-center justify-center px-6 sm:px-10 md:pt-0 pt-24 lg:px-24 overflow-hidden font-[family-name:var(--font-geist-sans)]" style={{ transition: "background-color 0.3s ease, color 0.3s ease" }}>
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-7 items-center">
 
         {/* Left Side: Text Content */}

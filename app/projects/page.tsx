@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="flex flex-col w-screen justify-center items-center min-h-screen bg-[#0a0a0a] overflow-x-hidden">
+    <main className="flex flex-col w-screen justify-center items-center min-h-screen bg-black overflow-x-hidden">
       <div className="flex flex-col w-full max-w-8xl px-6 sm:px-10 lg:px-24 py-24 sm:py-16 lg:py-20">
         {/* Page heading */}
         <h1 className="text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#cccccc] leading-[1.1] mb-12 sm:mb-16 font-[family-name:var(--font-geist-mono)] tracking-tight">

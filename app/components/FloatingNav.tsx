@@ -29,7 +29,7 @@ export default function FloatingNav() {
   return (
     <nav className="fixed top-5 right-5 z-50">
       <div
-        className="flex items-center rounded-full border border-[#2a2a2a] bg-[#0a0a0a]/80 backdrop-blur-md shadow-lg shadow-black/30"
+        className="flex items-center rounded-full border border-[#2a2a2a] bg-black/80 backdrop-blur-md shadow-lg shadow-black/30"
         style={{ padding: "4px" }}
       >
         {items.map((item, index) => {
