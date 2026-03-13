@@ -35,6 +35,7 @@ export default function ProjectsPage() {
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     className="w-full rounded-lg border border-[#222222] object-cover"
                   />
                 </div>
@@ -96,6 +97,7 @@ export default function ProjectsPage() {
                   loop
                   muted
                   playsInline
+                  preload="auto"
                   className="w-full rounded-lg border border-[#222222] object-cover aspect-video"
                 />
                 {project.xLink && (

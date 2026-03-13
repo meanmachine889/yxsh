@@ -91,7 +91,7 @@ export default function Hero() {
                 fill
                 className="object-contain p-4"
                 priority
-                sizes="100vw, 420px"
+                sizes="(max-width: 420px) 100vw, 420px"
               />
             </div>
 

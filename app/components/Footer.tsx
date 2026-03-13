@@ -59,6 +59,7 @@ export default function Footer() {
             fill
             className="object-contain"
             sizes="128px"
+            loading="eager"
           />
           {/* Soft Radial Glow */}
           <div
