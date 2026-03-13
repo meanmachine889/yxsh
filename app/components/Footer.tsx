@@ -34,11 +34,11 @@ export default function Footer() {
               </a>
 
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[#888888] font-[family-name:var(--font-geist-mono)] text-[clamp(0.8rem,1.8vw,0.95rem)]">
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">twitter</a>
+                <a href="https://x.com/furiyash" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">twitter</a>
                 <span className="text-[#444444]">•</span>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">linkedin</a>
+                <a href="https://www.linkedin.com/in/yash-bharadwaj-47871b251" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">linkedin</a>
                 <span className="text-[#444444]">•</span>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">github</a>
+                <a href="https://github.com/meanmachine889" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">github</a>
                 <span className="text-[#444444]">•</span>
                 <a href="https://drive.google.com/file/d/1gcJPKYqwmLngCaruuUED1utYBywRZB6k/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">resume</a>
               </div>

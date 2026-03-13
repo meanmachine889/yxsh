@@ -63,9 +63,9 @@ export default function Hero() {
             <div className="flex items-center gap-4 text-[#888888] font-[family-name:var(--font-geist-mono)] text-[clamp(0.8rem,1.8vw,0.95rem)]">
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">twitter</a>
               <span className="text-[#444444]">•</span>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">linkedin</a>
+              <a href="https://www.linkedin.com/in/yash-bharadwaj-47871b251" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">linkedin</a>
               <span className="text-[#444444]">•</span>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">github</a>
+              <a href="https://github.com/meanmachine889" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">github</a>
             </div>
           </div>
         </div>
