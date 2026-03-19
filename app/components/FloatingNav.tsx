@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import { House, Monitor } from "lucide-react";
+import { House, Monitor, FileText } from "lucide-react";
 
 function HomeIcon() {
   return (
@@ -17,6 +17,12 @@ function ProjectsIcon() {
   );
 }
 
+function ResumeIcon() {
+  return (
+    <FileText size={18} />
+  );
+}
+
 export default function FloatingNav() {
   const pathname = usePathname();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -24,6 +30,7 @@ export default function FloatingNav() {
   const items = [
     { id: "home", label: "Home", href: "/", icon: HomeIcon },
     { id: "projects", label: "Projects", href: "/projects", icon: ProjectsIcon },
+    { id: "resume", label: "Resume", href: "/resume", icon: ResumeIcon },
   ];
 
   return (
