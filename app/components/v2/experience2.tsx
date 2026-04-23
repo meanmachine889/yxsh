@@ -210,7 +210,7 @@ export default function Experience2() {
                       />
                     </div>
                     <div className="flex min-w-0 flex-col text-left">
-                      <span className="text-[0.9rem] tracking-tight text-fg">
+                      <span className="md:text-[0.9rem] text-[0.95rem] tracking-tight text-fg">
                         {exp.company}
                       </span>
                       <span className="mt-0.5 text-[0.8rem] text-fg-3">
