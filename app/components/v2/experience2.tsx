@@ -71,7 +71,7 @@ const BULLETS: Record<string, Segment[][]> = {
     ],
     [
       { text: "Shipped " },
-      { text: "production-grade Go services", bold: true },
+      { text: "production grade Go services", bold: true },
       { text: " powering " },
       { text: "end to end deposit flows", bold: true },
       { text: " and " },
@@ -255,7 +255,7 @@ export default function Experience2() {
                 )}
 
                 {bullets.length > 0 && (
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-4">
                     {bullets.map((segments, i) => (
                       <Bullet key={i} segments={segments} />
                     ))}
