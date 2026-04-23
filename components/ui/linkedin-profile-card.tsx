@@ -20,7 +20,7 @@ export function LinkedInProfileCard({
   return (
     <div
       className={cn(
-        "w-[260px] rounded-lg p-3 backdrop-blur-md font-sans border",
+        "w-[260px] rounded-lg p-3 mb-2 backdrop-blur-md font-sans border",
         className
       )}
       style={{

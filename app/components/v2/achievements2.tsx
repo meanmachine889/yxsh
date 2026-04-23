@@ -104,6 +104,7 @@ export default function Achievements2() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block text-fg underline underline-offset-3 transition-opacity hover:opacity-90"
+                  style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
                 >
                   {a.title}
                 </Link>

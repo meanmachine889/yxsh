@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { XProfileCard } from "@/components/ui/x-profile-card";
@@ -49,7 +48,7 @@ export default function Footer2() {
             rel="noopener noreferrer"
             className="hover:text-fg transition-colors"
           >
-            <span className="text-fg-2">@furiyash</span>
+            <span className="text-fg-2 underline underline-offset-2" style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}>@furiyash</span>
           </a>
           <div
             className="hidden md:block absolute left-0 bottom-full z-40 pb-3"
@@ -88,7 +87,7 @@ export default function Footer2() {
             rel="noopener noreferrer"
             className="hover:text-fg transition-colors"
           >
-            <span className="text-fg-2">github</span>
+            <span className="text-fg-2 underline underline-offset-2" style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}>github</span>
           </a>
           <div
             className="hidden md:block absolute left-0 bottom-full z-40 pb-3"
@@ -111,7 +110,8 @@ export default function Footer2() {
           <button
             type="button"
             onClick={copyEmail}
-            className="text-fg-2 hover:text-fg transition-colors cursor-pointer"
+            className="text-fg-2 underline underline-offset-2 hover:text-fg transition-colors cursor-pointer"
+            style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
           >
             email
           </button>
@@ -144,10 +144,10 @@ export default function Footer2() {
                     rel="noopener noreferrer"
                     className="hover:text-fg transition-colors"
                   >
-                    <span className="text-fg-2">LinkedIn</span>
+                    <span className="text-fg-2 underline underline-offset-2" style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}>LinkedIn</span>
                   </a>
                   <div
-                    className="hidden md:block absolute left-0 top-full z-40 pt-3"
+                    className="hidden md:block absolute left-0 bottom-full z-40 pb-3"
                     style={{
                       opacity: showLinkedInCard ? 1 : 0,
                       transform: cardTransform(showLinkedInCard),

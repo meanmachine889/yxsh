@@ -30,24 +30,37 @@ export default function FloatingNav() {
   const [hoveredItem, setHoveredItem] = useState<string | null>( null);
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
-  const clickAudioRef = useRef<HTMLAudioElement | null>(null);
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const audioBufferRef = useRef<AudioBuffer | null>(null);
 
   useEffect(() => {
     const current = (document.documentElement.getAttribute("data-theme") as Theme) || "light";
     setTheme(current);
     setMounted(true);
 
-    const audio = new Audio("/universfield-computer-mouse-click-352734.mp3");
-    audio.preload = "auto";
-    audio.volume = 0.25;
-    clickAudioRef.current = audio;
+    const ctx = new AudioContext();
+    audioCtxRef.current = ctx;
+    fetch("/universfield-computer-mouse-click-352734.mp3")
+      .then((r) => r.arrayBuffer())
+      .then((buf) => ctx.decodeAudioData(buf))
+      .then((decoded) => { audioBufferRef.current = decoded; })
+      .catch(() => {});
+
+    return () => { ctx.close(); };
   }, []);
 
   const playClickSound = () => {
-    const audio = clickAudioRef.current;
-    if (!audio) return;
-    audio.currentTime = 0;
-    void audio.play().catch(() => {});
+    const ctx = audioCtxRef.current;
+    const buffer = audioBufferRef.current;
+    if (!ctx || !buffer) return;
+    if (ctx.state === "suspended") ctx.resume();
+    const source = ctx.createBufferSource();
+    source.buffer = buffer;
+    const gain = ctx.createGain();
+    gain.gain.value = 0.25;
+    source.connect(gain);
+    gain.connect(ctx.destination);
+    source.start(0);
   };
 
   const toggleTheme = () => {

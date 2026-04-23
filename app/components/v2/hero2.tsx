@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { XProfileCard } from "@/components/ui/x-profile-card";
 import { LinkedInProfileCard } from "@/components/ui/linkedin-profile-card";
 import { GithubCalendarCard } from "@/components/ui/github-calendar-card";
+import { GraphicsCard } from "@/components/ui/graphics-card";
 
 
 export default function Hero2() {
@@ -18,6 +19,7 @@ export default function Hero2() {
   const [showGhCard, setShowGhCard] = useState(false);
   const [showShiplogCard, setShowShiplogCard] = useState(false);
   const [showLinkedInCard, setShowLinkedInCard] = useState(false);
+  const [showGraphicsCard, setShowGraphicsCard] = useState(false);
   const [showEmailTip, setShowEmailTip] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
 
@@ -58,7 +60,8 @@ export default function Hero2() {
           href="https://www.integral.com/integral-launches-worlds-first-stablecoin-based-crypto-prime-broker/"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-3 text-fg-2 hover:text-blue-300"
+          className="underline underline-offset-2 hover:text-blue-300"
+          style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
         >
           Integral
         </Link>
@@ -67,7 +70,8 @@ export default function Hero2() {
           href="https://www.primeone.net/?utm_source=pressrelease&utm_medium=referral&utm_campaign=launch"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-3 text-fg-2 hover:text-blue-300"
+          className="underline underline-offset-2 hover:text-blue-300"
+          style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
         >
           PrimeOne
         </Link>
@@ -82,7 +86,7 @@ export default function Hero2() {
           width={20}
           height={20}
           className="inline-block -translate-y-0.5 align-middle transition-transform hover:scale-110"
-        />{" "} Shiplog, a tool that automates changelog generation so teams can focus more on shipping and less on documenting. Check out the <Link href="https://shiplog.today" target="_blank" rel="noopener noreferrer" className="underline underline-offset-3 text-fg-2 hover:text-blue-300">website</Link> or follow updates at <span
+        />{" "} Shiplog, a tool that automates changelog generation so teams can focus more on shipping and less on documenting. Check out the <Link href="https://shiplog.today" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-blue-300" style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}>website</Link> or follow updates at <span
           className="relative"
           onMouseEnter={() => setShowShiplogCard(true)}
           onMouseLeave={() => setShowShiplogCard(false)}
@@ -93,7 +97,7 @@ export default function Hero2() {
             rel="noopener noreferrer"
             className="hover:text-fg transition-colors"
           >
-            <span className="text-fg-2 underline underline-offset-3">@shiploggg</span>
+            <span className="underline underline-offset-2" style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}>@shiploggg</span>
           </a>
           <div
             className="hidden md:block absolute left-0 top-full z-40 pt-3"
@@ -130,7 +134,32 @@ export default function Hero2() {
           width={20}
           height={20}
           className="inline-block -translate-y-1 align-middle transition-transform hover:scale-110"
-        />{" "}  music, or experimenting with video edits, graphics, and  <Image
+        />{" "}  music, or experimenting with video edits, <span
+            className="relative"
+            onMouseEnter={() => setShowGraphicsCard(true)}
+            onMouseLeave={() => setShowGraphicsCard(false)}
+          >
+            <a
+              href="https://in.pinterest.com/furiyash/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-blue-300 transition-colors"
+              style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
+            >
+              graphics
+            </a>
+            <div
+              className="hidden md:block absolute left-0 top-full z-40 pt-3"
+              style={{
+                opacity: showGraphicsCard ? 1 : 0,
+                transform: cardTransform(showGraphicsCard),
+                pointerEvents: showGraphicsCard ? "auto" : "none",
+                transition: CARD_TRANSITION,
+              }}
+            >
+              <GraphicsCard url="https://in.pinterest.com/furiyash/" />
+            </div>
+          </span>, and  <Image
           src="/draw.png"
           alt="laptop"
           width={22}
@@ -152,7 +181,7 @@ export default function Hero2() {
             rel="noopener noreferrer"
             className="hover:text-fg transition-colors"
           >
-            <span className="text-fg-2">@furiyash</span>
+            <span className="text-fg-2 underline underline-offset-2" style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}>@furiyash</span>
           </a>
           <div
             className="hidden md:block absolute left-0 top-full z-40 pt-3"
@@ -190,7 +219,7 @@ export default function Hero2() {
             rel="noopener noreferrer"
             className="hover:text-fg transition-colors"
           >
-            <span className="text-fg-2">github</span>
+            <span className="text-fg-2 underline underline-offset-2" style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}>github</span>
           </a>
           <div
             className="hidden md:block absolute left-0 top-full z-40 pt-3"
@@ -212,7 +241,8 @@ export default function Hero2() {
           <button
             type="button"
             onClick={copyEmail}
-            className="text-fg-2 hover:text-fg transition-colors cursor-pointer"
+            className="text-fg-2 underline underline-offset-2 hover:text-fg transition-colors cursor-pointer"
+            style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
           >
             email
           </button>
@@ -245,7 +275,7 @@ export default function Hero2() {
             rel="noopener noreferrer"
             className="hover:text-fg transition-colors"
           >
-            <span className="text-fg-2">LinkedIn</span>
+            <span className="text-fg-2 underline underline-offset-2" style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}>LinkedIn</span>
           </a>
           <div
             className="hidden md:block absolute left-0 top-full z-40 pt-3"
