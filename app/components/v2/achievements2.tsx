@@ -103,7 +103,7 @@ export default function Achievements2() {
                   href={a.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-fg font-semibold underline underline-offset-3 transition-opacity hover:opacity-90"
+                  className="inline-block text-fg underline underline-offset-3 transition-opacity hover:opacity-90"
                 >
                   {a.title}
                 </Link>
