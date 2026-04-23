@@ -246,13 +246,13 @@ export default function Experience2() {
               </AccordionTrigger>
 
               <AccordionContent className="pb-5 md:pt-3 pt-1 md:px-5 px-1">
-                {exp.details.techStack.length > 0 && (
+                {/* {exp.details.techStack.length > 0 && (
                   <div className="mb-5 flex flex-wrap gap-2">
                     {exp.details.techStack.map((tech) => (
                       <TechChip key={tech} name={tech} />
                     ))}
                   </div>
-                )}
+                )} */}
 
                 {bullets.length > 0 && (
                   <ul className="space-y-4">
