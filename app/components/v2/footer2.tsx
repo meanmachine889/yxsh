@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { XProfileCard } from "@/components/ui/x-profile-card";
 import { GithubCalendarCard } from "@/components/ui/github-calendar-card";
+import { LinkedInProfileCard } from "@/components/ui/linkedin-profile-card";
 
 const EMAIL = "bharadwajj131@gmail.com";
 const CARD_TRANSITION =
@@ -15,6 +16,8 @@ export default function Footer2() {
   const [showGhCard, setShowGhCard] = useState(false);
   const [showEmailTip, setShowEmailTip] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
+  const [showLinkedInCard, setShowLinkedInCard] = useState(false);
+  
 
   const cardTransform = (visible: boolean) =>
     visible ? "translateY(0) scale(1)" : "translateY(6px) scale(0.98)";
@@ -130,15 +133,37 @@ export default function Footer2() {
           </span>
         </span>{" "}
         or on{" "}
-        <Link
-          href="https://linkedin.com/in/yashbharadwaj"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-fg-2 hover:text-fg transition-colors"
-        >
-          LinkedIn
-        </Link>
-        .
+        <span
+                  className="relative"
+                  onMouseEnter={() => setShowLinkedInCard(true)}
+                  onMouseLeave={() => setShowLinkedInCard(false)}
+                >
+                  <a
+                    href="https://linkedin.com/in/yash-bharadwaj-47871b251"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-fg transition-colors"
+                  >
+                    <span className="text-fg-2">LinkedIn</span>
+                  </a>
+                  <div
+                    className="hidden md:block absolute left-0 top-full z-40 pt-3"
+                    style={{
+                      opacity: showLinkedInCard ? 1 : 0,
+                      transform: cardTransform(showLinkedInCard),
+                      pointerEvents: showLinkedInCard ? "auto" : "none",
+                      transition: CARD_TRANSITION,
+                    }}
+                  >
+                    <LinkedInProfileCard
+                      name="Yash Bharadwaj"
+                      handle="yash-bharadwaj-47871b251"
+                      avatar="https://media.licdn.com/dms/image/v2/D5603AQHX1t0KZ6WeRA/profile-displayphoto-crop_800_800/B56ZvfYtnCIcAQ-/0/1768979358024?e=1778716800&v=beta&t=XCY-33x-QxPkRRcWvAeoN9Mdu6eVWfKm5_0Z-5aZbkc"
+                      url="https://linkedin.com/in/yash-bharadwaj-47871b251"
+                      bio="SDE Intern @ Integral | ex dev @ Eventory & Horse's Mouth (Yocket)"
+                    />
+                  </div>
+                </span>.
       </div>
       <Image
         src="/charmander.gif" // change to your asset
