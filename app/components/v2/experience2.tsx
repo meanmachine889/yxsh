@@ -23,10 +23,6 @@ const TECH_ICONS: Record<string, TechMeta> = {
   "Tailwind CSS": {
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
   },
-  ShadCN: {
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shadcnui/shadcnui-original.svg",
-    invert: true,
-  },
   Redux: {
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
   },
