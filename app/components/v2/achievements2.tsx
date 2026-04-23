@@ -85,15 +85,15 @@ function renderBody(segs: Segment[]) {
 
 export default function Achievements2() {
   return (
-    <section className="w-full max-w-3xl mt-14 font-[family-name:var(--font-poppins)] sm:mt-16">
-      <h2 className="mb-4 leading-[1.55rem] text-fg-1 text-[1.02rem]">Notable achievements</h2>
+    <section className="w-full max-w-3xl mt-14 font-[family-name:var(--font-poppins)] text-[1.02rem] leading-[1.75rem] sm:mt-16">
+      <h2 className="mb-4 text-[1.02rem] leading-[1.75rem] text-fg-1">Notable achievements</h2>
 
       <ul className="space-y-4">
         {ACHIEVEMENTS.map((a, i) => (
-          <li key={i} className="flex gap-3 text-[13.5px] leading-6 text-fg-2 sm:text-[15px]">
+          <li key={i} className="flex gap-3 text-[0.98rem] leading-[1.7rem] text-fg-2">
             <span
               aria-hidden
-              className="shrink-0 select-none translate-y-[-2px] text-xl font-bold text-fg-4"
+              className="shrink-0 select-none translate-y-[-2px] text-[1.1rem] font-bold text-fg-4"
             >
               •
             </span>
@@ -109,7 +109,7 @@ export default function Achievements2() {
                 </Link>
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute left-0 top-full mt-1 hidden whitespace-nowrap rounded-md border px-2 py-1 text-[11px] opacity-0 -translate-y-1 transition-all duration-200 group-hover/ach:opacity-100 group-hover/ach:translate-y-0 md:block"
+                  className="pointer-events-none absolute left-0 top-full mt-1 hidden whitespace-nowrap rounded-md border px-2 py-1 text-[0.82rem] opacity-0 -translate-y-1 transition-all duration-200 group-hover/ach:opacity-100 group-hover/ach:translate-y-0 md:block"
                   style={{
                     backgroundColor:
                       "color-mix(in srgb, var(--bg) 92%, transparent)",

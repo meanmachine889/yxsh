@@ -135,7 +135,7 @@ const BULLETS: Record<string, Segment[][]> = {
 function TechChip({ name }: { name: string }) {
   const meta = TECH_ICONS[name];
   return (
-    <span className="inline-flex items-center gap-1 rounded-md border border-dashed border-border-1 bg-fg/5 px-2 py-0.5 text-[0.75rem] leading-none backdrop-blur-sm sm:gap-2 sm:px-3 sm:py-[3px] sm:text-sm sm:leading-normal">
+    <span className="inline-flex items-center gap-1 rounded-md border border-dashed border-border-1 bg-fg/5 px-2 py-0.5 text-[0.82rem] leading-[1.2rem] backdrop-blur-sm sm:gap-2 sm:px-3 sm:py-[3px] sm:text-[0.9rem] sm:leading-normal">
       {meta && (
         <Image
           src={meta.icon}
@@ -152,8 +152,8 @@ function TechChip({ name }: { name: string }) {
 
 function Bullet({ segments }: { segments: Segment[] }) {
   return (
-    <li className="flex gap-3 text-[13.5px] leading-6 text-fg-2 sm:text-[15px]">
-      <span aria-hidden className="shrink-0 select-none translate-y-[-2px] text-xl font-bold text-fg-4">
+    <li className="flex gap-3 text-[0.94rem] leading-[1.6rem] text-fg-2 sm:text-[0.98rem] sm:leading-[1.7rem]">
+      <span aria-hidden className="shrink-0 select-none translate-y-[-2px] text-[1.1rem] font-bold text-fg-4">
         •
       </span>
       <span>
@@ -174,7 +174,7 @@ function Bullet({ segments }: { segments: Segment[] }) {
 export default function Experience2() {
   return (
     <section className="w-full max-w-3xl mt-14 font-[family-name:var(--font-poppins)] sm:mt-16">
-      <h2 className="mb-4 text-[0.92rem] text-fg-1  leading-[1.55rem] sm:text-[1.02rem]">Places I've worked at</h2>
+      <h2 className="mb-4 text-[1.02rem] text-fg-1 leading-[1.75rem]">Places I've worked at</h2>
 
       <Accordion className="flex w-full flex-col" defaultValue={["integral"]}>
         {experiences.map((exp) => {
@@ -210,13 +210,13 @@ export default function Experience2() {
                       />
                     </div>
                     <div className="flex min-w-0 flex-col text-left">
-                      <span className="md:text-[1.02rem] text-[0.95rem] text-fg">
+                      <span className="text-[1.02rem] text-fg">
                         {exp.company}
                       </span>
-                      <span className="mt-0.5 text-[0.85rem] text-fg-3">
+                      <span className="mt-0.5 text-[0.9rem] text-fg-3">
                         {exp.role}
                       </span>
-                      <div className="mt-1 flex flex-col items-start text-left text-[0.8rem] text-fg-2 sm:hidden">
+                      <div className="mt-1 flex flex-col items-start text-left text-[0.82rem] text-fg-2 sm:hidden">
                         <span>{exp.date}</span>
                         <span className="mt-0.5 text-fg-3">{exp.location}</span>
                       </div>
@@ -225,16 +225,16 @@ export default function Experience2() {
 
                   <div className="ml-auto flex shrink-0 items-center gap-3 self-start pt-1 sm:self-auto sm:pt-0">
                     <div className="hidden flex-col items-start text-left sm:flex sm:items-end sm:text-right">
-                      <span className="text-[0.85rem] text-fg-2">
+                      <span className="text-[0.82rem] text-fg-2">
                         {exp.date}
                       </span>
-                      <span className="mt-0.5 text-[0.85rem] text-fg-3">
+                      <span className="mt-0.5 text-[0.82rem] text-fg-3">
                         {exp.location}
                       </span>
                     </div>
                     <div style={{
                       backgroundColor: "var(--surface)", background: "color-mix(in srgb, var(--fg) 14%, var(--surface))"
-                    }} className="rounded-sm border aspect-square flex items-center justify-center p-1 text-[0.75rem] text-fg backdrop-blur-sm">
+                    }} className="rounded-sm border aspect-square flex items-center justify-center p-1 text-[0.82rem] text-fg backdrop-blur-sm">
                       <ArrowDown01Icon
                         size={16}
                         strokeWidth={1.75}

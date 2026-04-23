@@ -65,7 +65,7 @@ const techStack: Tech[] = [
 
 function TechBadge({ tech }: { tech: Tech }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-md border border-dashed border-border-1 bg-fg/5 px-2 py-0.5 text-[0.75rem] leading-none backdrop-blur-sm sm:gap-2 sm:px-3 sm:py-[3px] sm:text-sm sm:leading-normal">
+    <span className="inline-flex items-center gap-1 rounded-md border border-dashed border-border-1 bg-fg/5 px-2 py-0.5 text-[0.75rem] leading-none backdrop-blur-sm sm:gap-2 sm:px-3 sm:py-[3px] sm:text-[0.82rem] sm:leading-normal">
       <Image
         src={tech.icon}
         alt={tech.name}
@@ -80,7 +80,7 @@ function TechBadge({ tech }: { tech: Tech }) {
 
 export default function TechStack2() {
   return (
-    <div className="w-full max-w-3xl mt-8 font-[family-name:var(--font-poppins)] text-[0.9rem] leading-[1.55rem] text-fg-1 sm:mt-9 sm:text-[0.95rem] sm:leading-7">
+    <div className="w-full max-w-3xl mt-8 font-[family-name:var(--font-poppins)] text-[0.94rem] leading-[1.55rem] text-fg-1 sm:mt-9 sm:text-[1.02rem] sm:leading-[1.75rem]">
       <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1.5 sm:gap-x-2 sm:gap-y-2">
         My main tech stack includes
         {techStack.slice(0, 6).map((tech) => (
