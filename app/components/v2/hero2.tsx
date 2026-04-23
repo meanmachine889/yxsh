@@ -7,6 +7,7 @@ import { XProfileCard } from "@/components/ui/x-profile-card";
 import { LinkedInProfileCard } from "@/components/ui/linkedin-profile-card";
 import { GithubCalendarCard } from "@/components/ui/github-calendar-card";
 import { GraphicsCard } from "@/components/ui/graphics-card";
+import { SpotifyCard } from "@/components/ui/spotify-card";
 
 
 export default function Hero2() {
@@ -19,6 +20,7 @@ export default function Hero2() {
   const [showGhCard, setShowGhCard] = useState(false);
   const [showShiplogCard, setShowShiplogCard] = useState(false);
   const [showLinkedInCard, setShowLinkedInCard] = useState(false);
+  const [showMusicCard, setShowMusicCard] = useState(false);
   const [showGraphicsCard, setShowGraphicsCard] = useState(false);
   const [showEmailTip, setShowEmailTip] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
@@ -134,7 +136,32 @@ export default function Hero2() {
           width={20}
           height={20}
           className="inline-block -translate-y-1 align-middle transition-transform hover:scale-110"
-        />{" "}  music, or experimenting with video edits, <span
+        />{" "}  <span
+            className="relative"
+            onMouseEnter={() => setShowMusicCard(true)}
+            onMouseLeave={() => setShowMusicCard(false)}
+          >
+            <a
+              href="https://open.spotify.com/playlist/2Om35BZD8zdKnfrrSJNtHl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-blue-300 transition-colors"
+              style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
+            >
+              music
+            </a>
+            <div
+              className="hidden md:block absolute left-0 top-full z-40 pt-3"
+              style={{
+                opacity: showMusicCard ? 1 : 0,
+                transform: cardTransform(showMusicCard),
+                pointerEvents: showMusicCard ? "auto" : "none",
+                transition: CARD_TRANSITION,
+              }}
+            >
+              <SpotifyCard url="https://open.spotify.com/playlist/2Om35BZD8zdKnfrrSJNtHl" />
+            </div>
+          </span>, or experimenting with video edits, <span
             className="relative"
             onMouseEnter={() => setShowGraphicsCard(true)}
             onMouseLeave={() => setShowGraphicsCard(false)}
