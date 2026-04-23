@@ -49,7 +49,7 @@ export default function Hero2() {
           alt="laptop"
           width={25}
           height={25}
-          className="inline-block h-[18px] w-[18px] align-middle transition-transform hover:scale-110 sm:h-[25px] sm:w-[25px]"
+          className="inline-block align-middle transition-transform hover:scale-110"
         />{" "}
         at{" "}
         <Link
@@ -79,7 +79,7 @@ export default function Hero2() {
           alt="laptop"
           width={20}
           height={20}
-          className="inline-block h-3.5 w-3.5 -translate-y-0.5 align-middle transition-transform hover:scale-110 sm:h-5 sm:w-5"
+          className="inline-block -translate-y-0.5 align-middle transition-transform hover:scale-110"
         />{" "} Shiplog, a tool that automates changelog generation so teams can focus more on shipping and less on documenting. Check out the <Link href="https://shiplog.today" target="_blank" rel="noopener noreferrer" className="underline underline-offset-3 text-fg-2 hover:text-blue-300">website</Link> or follow updates at <span
           className="relative"
           onMouseEnter={() => setShowShiplogCard(true)}
@@ -121,19 +121,19 @@ export default function Hero2() {
           alt="laptop"
           width={25}
           height={25}
-          className="inline-block h-[18px] w-[18px] -translate-y-1 align-middle transition-transform hover:scale-110 sm:h-[25px] sm:w-[25px]"
+          className="inline-block -translate-y-1 align-middle transition-transform hover:scale-110"
         />{" "} series or anime, listening to <Image
           src="/hdphn.png"
           alt="laptop"
           width={20}
           height={20}
-          className="inline-block h-3.5 w-3.5 -translate-y-1 align-middle transition-transform hover:scale-110 sm:h-5 sm:w-5"
+          className="inline-block -translate-y-1 align-middle transition-transform hover:scale-110"
         />{" "}  music, or experimenting with video edits, graphics, and  <Image
           src="/draw.png"
           alt="laptop"
           width={22}
           height={22}
-          className="inline-block h-3.5 w-3.5 -translate-y-1 align-middle transition-transform hover:scale-110 sm:h-[22px] sm:w-[22px]"
+          className="inline-block -translate-y-1 align-middle transition-transform hover:scale-110"
         />{" "}sketches. </p>
       <p>I enjoy being <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">creative</span> and exploring new hobbies from time to time.
       </p>
