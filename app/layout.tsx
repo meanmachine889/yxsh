@@ -62,9 +62,9 @@ export const metadata: Metadata = {
   category: "Technology",
 
   icons: {
-    icon: "https://res.cloudinary.com/dnfv0h10u/image/upload/v1749390603/y_qqrdor.svg",
-    shortcut: "https://res.cloudinary.com/dnfv0h10u/image/upload/v1749390603/y_qqrdor.svg",
-    apple: "https://res.cloudinary.com/dnfv0h10u/image/upload/v1749390603/y_qqrdor.svg",
+    icon: "/logo.ico",
+    shortcut: "/logo.ico",
+    apple: "/logo.ico",
   },
 
   openGraph: {
