@@ -234,7 +234,7 @@ export default function Experience2() {
                     </div>
                     <div style={{
                       backgroundColor: "var(--surface)", background: "color-mix(in srgb, var(--fg) 14%, var(--surface))"
-                    }} className="rounded-sm border aspect-square flex items-center justify-center p-1 text-[0.82rem] text-fg backdrop-blur-sm">
+                    }} className="rounded-sm aspect-square flex items-center justify-center p-1 text-[0.82rem] text-fg backdrop-blur-sm">
                       <ArrowDown01Icon
                         size={16}
                         strokeWidth={1.75}
