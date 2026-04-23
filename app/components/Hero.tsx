@@ -60,12 +60,12 @@ export default function   Hero() {
         {/* Left Side: Text Content */}
         <div className="flex flex-col space-y-4 mx-auto lg:mx-0 lg:col-span-3">
           <div>
-            <h1 className="text-[clamp(1.75rem,5vw,2.75rem)] font-medium text-fg-2 leading-[1.15] tracking-tight">
+            <h1 className="text-[clamp(1.75rem,5vw,2.75rem)] font-medium text-fg-2 leading-[1.15] ">
               Hi, I'm Yash
             </h1>
           </div>
 
-          <div className="text-fg-3 text-[clamp(0.85rem,1.6vw,1rem)] tracking-tight max-w-xl leading-relaxed">
+          <div className="text-fg-3 text-[clamp(0.85rem,1.6vw,1rem)]  max-w-xl leading-relaxed">
             <p>
               22 y/o builder from india. i spend most of my time learning new things and building products. currently exploring <span className="text-fg-2">web3</span>, <span className="text-fg-2">ios development</span>, and better ways to build modern apps.
             </p>

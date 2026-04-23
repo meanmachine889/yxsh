@@ -9,13 +9,13 @@ export default function WorkExperience() {
   return (
     <section className="bg-bg w-full py-12 border-t border-dashed border-border-1 sm:py-16 lg:py-20 text-fg flex justify-center font-[family-name:var(--font-geist-sans)]">
       <div className="w-full flex flex-col">
-        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight text-fg mb-8 sm:mb-10">
+        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)]  text-fg mb-8 sm:mb-10">
           Experience
         </h2>
 
         <div className="space-y-8 sm:space-y-10 w-full">
           {experiences.map((exp, index) => (
-            <Link key={index} href={`/experience/${exp.slug}`} className="flex flex-col md:flex-row md:items-center md:justify-between tracking-tight gap-3 md:gap-0 group cursor-pointer pb-2 hover:opacity-80 transition-opacity">
+            <Link key={index} href={`/experience/${exp.slug}`} className="flex flex-col md:flex-row md:items-center md:justify-between  gap-3 md:gap-0 group cursor-pointer pb-2 hover:opacity-80 transition-opacity">
               {/* Left Side: Logo, Company and Role */}
               <div className="flex items-center gap-4">
                 <div className={`relative w-10 h-10 rounded-full overflow-hidden shrink-0 ${exp.slug === 'eventory' ? 'bg-purple-400' :

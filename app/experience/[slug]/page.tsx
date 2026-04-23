@@ -70,7 +70,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
             />
           </div> */}
           <div className="flex flex-col">
-            <h1 className="text-[clamp(1.8rem,6vw,2.5rem)] tracking-tight font-[family-name:var(--font-geist-mono)] leading-tight">
+            <h1 className="text-[clamp(1.8rem,6vw,2.5rem)]  font-[family-name:var(--font-geist-mono)] leading-tight">
               {experience.company}
             </h1>
             <div className="text-fg-3 text-[clamp(0.85rem,2vw,1.1rem)] mt-2 font-[family-name:var(--font-geist-mono)]">
@@ -92,7 +92,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
             <>
               {experience.details.techStack && experience.details.techStack.length > 0 && (
                 <section>
-                  <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight mb-6">
+                  <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)]  mb-6">
                     Tech I Worked with
                   </h2>
                   <div className="flex flex-wrap gap-5 sm:gap-6">
@@ -121,7 +121,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
                           )}
 
                           {/* Tooltip */}
-                          <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded-md bg-surface border border-border-2 text-fg font-[family-name:var(--font-geist-mono)] text-xs tracking-tight whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+                          <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded-md bg-surface border border-border-2 text-fg font-[family-name:var(--font-geist-mono)] text-xs  whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150">
                             {tech}
                           </div>
                         </div>
@@ -133,7 +133,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
 
               {experience.details.workIncluded && experience.details.workIncluded.length > 0 && (
                 <section>
-                  <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight mb-6">
+                  <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)]  mb-6">
                     My Work Included
                   </h2>
                   <div className="space-y-8 sm:space-y-12">

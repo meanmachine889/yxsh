@@ -16,7 +16,7 @@ export default function Footer() {
     <section className="bg-bg border-t border-dashed border-border-1  py-12 sm:py-16 lg:py-20 w-full text-fg flex justify-center font-[family-name:var(--font-geist-sans)]">
       <div className="w-full flex flex-col sm:flex-row sm:items-end sm:justify-between gap-10 sm:gap-0">
         <div className="flex flex-col">
-          <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight text-fg mb-8 sm:mb-10">
+          <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)]  text-fg mb-8 sm:mb-10">
             Contact
           </h2>
 

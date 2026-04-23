@@ -9,7 +9,7 @@ export default function ExperiencePage() {
   return (
     <main className="flex flex-col w-screen justify-center items-center min-h-screen bg-bg overflow-x-hidden">
       <div className="flex flex-col w-full max-w-5xl px-6 sm:px-10 lg:px-26 py-24 sm:py-16 lg:py-20">
-        <h1 className="text-2xl text-fg-2 leading-[1.1] mb-10 sm:mb-14 font-[family-name:var(--font-geist-mono)] tracking-tight">
+        <h1 className="text-2xl text-fg-2 leading-[1.1] mb-10 sm:mb-14 font-[family-name:var(--font-geist-mono)] ">
           Experience
         </h1>
 

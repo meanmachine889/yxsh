@@ -8,7 +8,7 @@ export default function Achievements() {
   return (
     <section className="bg-bg w-full border-t border-dashed border-border-1  py-12 sm:py-16 lg:py-20 text-fg flex justify-center font-[family-name:var(--font-geist-sans)]">
       <div className="w-full flex flex-col">
-        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight text-fg mb-8 sm:mb-10">
+        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)]  text-fg mb-8 sm:mb-10">
           Achievements
         </h2>
 
@@ -25,7 +25,7 @@ export default function Achievements() {
                     {item.id}
                   </span>
                   <div>
-                    <h3 className="text-[clamp(0.95rem,2.2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] text-fg tracking-tight">
+                    <h3 className="text-[clamp(0.95rem,2.2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] text-fg ">
                       {item.title}
                     </h3>
                     <div className="text-fg-3 text-[clamp(0.8rem,1.8vw,0.95rem)] font-[family-name:var(--font-geist-mono)]">

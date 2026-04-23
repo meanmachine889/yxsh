@@ -19,7 +19,7 @@ export default function ProjectsPage() {
               <ProjectVideo src={project.video} className="aspect-video" />
 
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-                <h2 className="text-[14px] font-medium tracking-tight text-fg sm:text-[15px]">
+                <h2 className="text-[14px] font-medium  text-fg sm:text-[15px]">
                   {project.name}
                 </h2>
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[12.5px] text-fg-3 sm:justify-end sm:text-[14px]">

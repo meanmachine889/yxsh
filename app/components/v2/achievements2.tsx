@@ -86,7 +86,7 @@ function renderBody(segs: Segment[]) {
 export default function Achievements2() {
   return (
     <section className="w-full max-w-3xl mt-14 font-[family-name:var(--font-poppins)] sm:mt-16">
-      <h2 className="mb-4 text-[0.92rem] text-fg-1 sm:text-[1rem]">Notable achievements</h2>
+      <h2 className="mb-4 leading-[1.55rem] text-fg-1 text-[1.02rem]">Notable achievements</h2>
 
       <ul className="space-y-4">
         {ACHIEVEMENTS.map((a, i) => (

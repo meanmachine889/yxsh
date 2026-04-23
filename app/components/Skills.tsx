@@ -8,7 +8,7 @@ export default function Skills() {
   return (
     <section className="bg-bg border-t border-dashed border-border-1  w-full py-12 sm:py-16 lg:py-20 text-fg flex justify-center font-[family-name:var(--font-geist-sans)]">
       <div className="w-full flex flex-col">
-        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight text-fg mb-8 sm:mb-10">
+        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)]  text-fg mb-8 sm:mb-10">
           Tech Stack
         </h2>
 
@@ -26,7 +26,7 @@ export default function Skills() {
                   className={`skill-icon object-contain ${skill.invert ? 'invert' : ''}`}
                 />
               </div>
-              <span className="font-[family-name:var(--font-geist-mono)] text-[clamp(0.7rem,1.8vw,0.95rem)] text-fg-3 tracking-tight text-center">
+              <span className="font-[family-name:var(--font-geist-mono)] text-[clamp(0.7rem,1.8vw,0.95rem)] text-fg-3  text-center">
                 {skill.name}
               </span>
             </div>

@@ -24,7 +24,7 @@ export default function Navbar() {
             {/* Logo / Name */}
             <a
                 href="/"
-                className="font-bold text-base tracking-tight select-none"
+                className="font-bold text-base  select-none"
                 style={{
                     fontFamily: "var(--font-geist-sans)",
                     color: "#ffffff",

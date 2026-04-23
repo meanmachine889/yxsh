@@ -174,7 +174,7 @@ function Bullet({ segments }: { segments: Segment[] }) {
 export default function Experience2() {
   return (
     <section className="w-full max-w-3xl mt-14 font-[family-name:var(--font-poppins)] sm:mt-16">
-      <h2 className="mb-4 text-[0.92rem] text-fg-1 sm:text-[1rem]">Places I've worked at</h2>
+      <h2 className="mb-4 text-[0.92rem] text-fg-1  leading-[1.55rem] sm:text-[1.02rem]">Places I've worked at</h2>
 
       <Accordion className="flex w-full flex-col" defaultValue={["integral"]}>
         {experiences.map((exp) => {
@@ -210,10 +210,10 @@ export default function Experience2() {
                       />
                     </div>
                     <div className="flex min-w-0 flex-col text-left">
-                      <span className="md:text-[0.9rem] text-[0.95rem] tracking-tight text-fg">
+                      <span className="md:text-[1.02rem] text-[0.95rem] text-fg">
                         {exp.company}
                       </span>
-                      <span className="mt-0.5 text-[0.8rem] text-fg-3">
+                      <span className="mt-0.5 text-[0.85rem] text-fg-3">
                         {exp.role}
                       </span>
                       <div className="mt-1 flex flex-col items-start text-left text-[0.8rem] text-fg-2 sm:hidden">
@@ -234,7 +234,7 @@ export default function Experience2() {
                     </div>
                     <div style={{
                       backgroundColor: "var(--surface)", background: "color-mix(in srgb, var(--fg) 14%, var(--surface))"
-                    }} className="rounded-sm aspect-square flex items-center justify-center p-1 text-[0.75rem] text-fg backdrop-blur-sm">
+                    }} className="rounded-sm border aspect-square flex items-center justify-center p-1 text-[0.75rem] text-fg backdrop-blur-sm">
                       <ArrowDown01Icon
                         size={16}
                         strokeWidth={1.75}
@@ -245,7 +245,7 @@ export default function Experience2() {
                 </div>
               </AccordionTrigger>
 
-              <AccordionContent className="pb-5 md:pt-3 pt-1 md:px-5 px-1">
+              <AccordionContent className="pb-7 md:pt-2 pt-1 md:px-5 px-1">
                 {/* {exp.details.techStack.length > 0 && (
                   <div className="mb-5 flex flex-wrap gap-2">
                     {exp.details.techStack.map((tech) => (
