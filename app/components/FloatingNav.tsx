@@ -2,82 +2,125 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useState } from "react";
-import { House, Monitor, FileText } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import {
+  Home01Icon,
+  CodeIcon,
+  NoteIcon,
+  Briefcase01Icon,
+  Sun01Icon,
+  Moon02Icon,
+} from "hugeicons-react";
 
-function HomeIcon() {
-  return (
-    <House  size={18}/>
-  );
-}
+type Theme = "light" | "dark";
 
-function ProjectsIcon() {
-  return (
-    <Monitor size={18} />
-  );
-}
+const PILL_SHADOW =
+  "inset 0 1px 0 0 color-mix(in srgb, var(--fg) 8%, transparent), " +
+  "inset 0 -1px 0 0 color-mix(in srgb, var(--bg) 50%, transparent), " +
+  "0 10px 24px -10px color-mix(in srgb, var(--fg) 30%, transparent), " +
+  "0 2px 4px -2px color-mix(in srgb, var(--fg) 15%, transparent)";
 
-function ResumeIcon() {
-  return (
-    <FileText size={18} />
-  );
-}
+const PUCK_SHADOW =
+  "inset 0 1px 0 0 color-mix(in srgb, var(--fg) 18%, transparent), " +
+  "inset 0 -1px 1px 0 color-mix(in srgb, var(--bg) 40%, transparent), " +
+  "0 2px 4px 0 color-mix(in srgb, var(--bg) 50%, transparent)";
 
 export default function FloatingNav() {
   const pathname = usePathname();
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<string | null>( null);
+  const [theme, setTheme] = useState<Theme>("light");
+  const [mounted, setMounted] = useState(false);
+  const clickAudioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    const current = (document.documentElement.getAttribute("data-theme") as Theme) || "light";
+    setTheme(current);
+    setMounted(true);
+
+    const audio = new Audio("/universfield-computer-mouse-click-352734.mp3");
+    audio.preload = "auto";
+    audio.volume = 0.25;
+    clickAudioRef.current = audio;
+  }, []);
+
+  const playClickSound = () => {
+    const audio = clickAudioRef.current;
+    if (!audio) return;
+    audio.currentTime = 0;
+    void audio.play().catch(() => {});
+  };
+
+  const toggleTheme = () => {
+    const next: Theme = theme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {}
+    setTheme(next);
+  };
 
   const items = [
-    { id: "home", label: "Home", href: "/", icon: HomeIcon },
-    { id: "projects", label: "Projects", href: "/projects", icon: ProjectsIcon },
-    { id: "resume", label: "Resume", href: "/resume", icon: ResumeIcon },
+    { id: "home", href: "/", Icon: Home01Icon },
+    { id: "projects", href: "/projects", Icon: CodeIcon },
+    { id: "resume", href: "/resume", Icon: NoteIcon },
   ];
 
   return (
-    <nav className="fixed top-5 right-5 z-50">
+    <nav className="fixed top-5 right-[max(1.25rem,calc((100vw-48rem)/2))] z-50">
       <div
-        className="flex items-center rounded-full border border-[#2a2a2a] bg-black/80 backdrop-blur-md shadow-lg shadow-black/30"
-        style={{ padding: "4px" }}
+        className="flex items-center gap-0.5 rounded-full p-1"
+        style={{
+          backgroundColor: "var(--surface)",
+        }}
       >
-        {items.map((item, index) => {
-          const Icon = item.icon;
-          const isActive = pathname === item.href;
-          const isHovered = hoveredItem === item.id;
+        {items.map(({ id, href, Icon }) => {
+          const isActive = pathname === href;
+          const isHovered = hoveredItem === id;
 
           return (
-            <div key={item.id} className="flex items-center">
-              
-              <Link
-                href={item.href}
-                onMouseEnter={() => setHoveredItem(item.id)}
-                onMouseLeave={() => setHoveredItem(null)}
-                className="relative flex items-center gap-1 rounded-full transition-all duration-300 ease-out"
-                style={{
-                  padding: "8px 12px",
-                  color: isActive ? "#ffffff" : isHovered ? "#cccccc" : "#666666",
-                  backgroundColor: isActive
-                    ? "rgba(255,255,255,0.08)"
-                    : isHovered
-                    ? "rgba(255,255,255,0.04)"
-                    : "transparent",
-                }}
-              >
-                <Icon />
-                <span
-                  className="overflow-hidden font-[family-name:var(--font-geist-mono)] whitespace-nowrap text-xs font-medium transition-all duration-300 ease-out"
-                  style={{
-                    fontFamily: "var(--font-geist-mono)",
-                    maxWidth: isHovered || !isActive ? "80px" : "0px",
-                    opacity: isHovered || !isActive ? 1 : 0,
-                    marginLeft: isHovered || !isActive ? "6px" : "0px",
-                  }}
-                >
-                  {item.label}
-                </span>
-              </Link>
-            </div>
+            <Link
+              key={id}
+              href={href}
+              aria-label={id}
+              onClick={playClickSound}
+              onMouseEnter={() => setHoveredItem(id)}
+              onMouseLeave={() => setHoveredItem(null)}
+              className="flex h-7 w-7 items-center justify-center rounded-full transition-colors duration-200"
+              style={{
+                color: isActive ? "var(--fg)" : isHovered ? "var(--fg-2)" : "var(--fg-3)",
+                background: isActive
+                  ? "color-mix(in srgb, var(--fg) 14%, var(--surface))"
+                  : "transparent",
+                boxShadow: isActive ? PUCK_SHADOW : "none",
+              }}
+            >
+              <Icon size={14} strokeWidth={1.75} />
+            </Link>
           );
         })}
+
+        <button
+          type="button"
+          aria-label="Toggle theme"
+          onClick={() => {
+            playClickSound();
+            toggleTheme();
+          }}
+          onMouseEnter={() => setHoveredItem("theme")}
+          onMouseLeave={() => setHoveredItem(null)}
+          className="flex h-7 w-7 items-center justify-center rounded-full transition-colors duration-200"
+          style={{
+            color: "var(--fg)",
+            background: "color-mix(in srgb, var(--fg) 14%, var(--surface))",
+            boxShadow: PUCK_SHADOW,
+          }}
+        >
+          {mounted ? (
+            theme === "dark" ? <Moon02Icon size={14} strokeWidth={1.75} /> : <Sun01Icon size={14} strokeWidth={1.75} />
+          ) : (
+            <Sun01Icon size={14} strokeWidth={1.75} />
+          )}
+        </button>
       </div>
     </nav>
   );

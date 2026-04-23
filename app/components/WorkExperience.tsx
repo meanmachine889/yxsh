@@ -7,9 +7,9 @@ import { experiences } from "@/app/data/experience";
 
 export default function WorkExperience() {
   return (
-    <section className="bg-black w-full py-12 border-t border-dashed border-[#333333] sm:py-16 lg:py-20 text-white flex justify-center font-[family-name:var(--font-geist-sans)]">
+    <section className="bg-bg w-full py-12 border-t border-dashed border-border-1 sm:py-16 lg:py-20 text-fg flex justify-center font-[family-name:var(--font-geist-sans)]">
       <div className="w-full flex flex-col">
-        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight text-white mb-8 sm:mb-10">
+        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight text-fg mb-8 sm:mb-10">
           Experience
         </h2>
 
@@ -20,7 +20,7 @@ export default function WorkExperience() {
               <div className="flex items-center gap-4">
                 <div className={`relative w-10 h-10 rounded-full overflow-hidden shrink-0 ${exp.slug === 'eventory' ? 'bg-purple-400' :
                   exp.slug === 'yocket' ? 'bg-orange-500' :
-                    'bg-[#1a1a1a]'
+                    'bg-surface'
                   }`}>
                   <Image
                     src={exp.logo}
@@ -32,11 +32,11 @@ export default function WorkExperience() {
 
                 <div className="flex flex-col">
                   <div className="flex items-center gap-3">
-                    <h3 className="text-[clamp(0.95rem,2.2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] text-white">
+                    <h3 className="text-[clamp(0.95rem,2.2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] text-fg">
                       {exp.company}
                     </h3>
                   </div>
-                  <div className="text-[#888888] text-[clamp(0.8rem,1.8vw,0.95rem)] mt-1">
+                  <div className="text-fg-3 text-[clamp(0.8rem,1.8vw,0.95rem)] mt-1">
                     {exp.role}
                   </div>
                 </div>
@@ -44,10 +44,10 @@ export default function WorkExperience() {
 
               {/* Right Side: Date and Location */}
               <div className="flex flex-col md:text-right mt-1 md:mt-0 pl-14 md:pl-0">
-                <div className="text-[#888888] text-[clamp(0.8rem,1.8vw,0.95rem)] font-[family-name:var(--font-geist-mono)]">
+                <div className="text-fg-3 text-[clamp(0.8rem,1.8vw,0.95rem)] font-[family-name:var(--font-geist-mono)]">
                   {exp.date}
                 </div>
-                <div className="text-[#888888] text-[clamp(0.8rem,1.8vw,0.95rem)] mt-1">
+                <div className="text-fg-3 text-[clamp(0.8rem,1.8vw,0.95rem)] mt-1">
                   {exp.location}
                 </div>
               </div>

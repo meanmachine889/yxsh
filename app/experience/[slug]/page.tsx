@@ -47,11 +47,11 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
   }
 
   return (
-    <main className="bg-black min-h-screen w-full text-white flex flex-col items-center px-6 py-16 sm:px-10 lg:px-8 md:pt-20 pt-24 font-[family-name:var(--font-geist-sans)]">
-      <div className="max-w-6xl px-0 sm:px-4 lg:px-8 w-full">
+    <main className="bg-bg min-h-screen w-full text-fg flex flex-col items-center px-6 py-16 sm:px-10 lg:px-8 md:pt-20 pt-24 font-[family-name:var(--font-geist-sans)]">
+      <div className="max-w-5xl px-0 sm:px-4 lg:px-8 w-full">
         <Link
           href="/"
-          className="text-[#888888] hover:text-white transition-colors mb-10 inline-flex items-center gap-2 text-[clamp(0.8rem,1.8vw,0.95rem)]"
+          className="text-fg-3 hover:text-fg transition-colors mb-10 inline-flex items-center gap-2 text-[clamp(0.8rem,1.8vw,0.95rem)]"
         >
           Back
         </Link>
@@ -73,7 +73,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
             <h1 className="text-[clamp(1.8rem,6vw,2.5rem)] tracking-tight font-[family-name:var(--font-geist-mono)] leading-tight">
               {experience.company}
             </h1>
-            <div className="text-[#888888] text-[clamp(0.85rem,2vw,1.1rem)] mt-2 font-[family-name:var(--font-geist-mono)]">
+            <div className="text-fg-3 text-[clamp(0.85rem,2vw,1.1rem)] mt-2 font-[family-name:var(--font-geist-mono)]">
               {experience.date} <span className="mx-2">&bull;</span> {experience.location}
             </div>
             <div className="text-[clamp(0.95rem,2.2vw,1.25rem)] mt-4 leading-relaxed">
@@ -85,7 +85,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
         {/* Content Section */}
         <div className="space-y-12 sm:space-y-16">
           {experience.slug === 'integral' ? (
-            <div className="text-[#888888] text-[clamp(0.95rem,2vw,1.1rem)]">
+            <div className="text-fg-3 text-[clamp(0.95rem,2vw,1.1rem)]">
               Currently working, will be updated soon.
             </div>
           ) : (
@@ -111,17 +111,17 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
                                 src={techInfo.icon}
                                 alt={`${tech} icon`}
                                 fill
-                                className={`object-contain ${techInfo.invert ? 'invert' : ''}`}
+                                className={`skill-icon object-contain ${techInfo.invert ? 'invert' : ''}`}
                               />
                             </div>
                           ) : (
-                            <div className="relative w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center bg-[#1a1a1a] rounded-full border border-[#333333] transition-opacity group-hover:opacity-60">
-                              <span className="text-[#888888] font-bold text-base">{tech.charAt(0)}</span>
+                            <div className="relative w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center bg-surface rounded-full border border-border-1 transition-opacity group-hover:opacity-60">
+                              <span className="text-fg-3 font-bold text-base">{tech.charAt(0)}</span>
                             </div>
                           )}
 
                           {/* Tooltip */}
-                          <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded-md bg-[#1a1a1a] border border-[#2a2a2a] text-white font-[family-name:var(--font-geist-mono)] text-xs tracking-tight whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+                          <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded-md bg-surface border border-border-2 text-fg font-[family-name:var(--font-geist-mono)] text-xs tracking-tight whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150">
                             {tech}
                           </div>
                         </div>
@@ -139,14 +139,14 @@ export default async function ExperiencePage({ params }: { params: Promise<{ slu
                   <div className="space-y-8 sm:space-y-12">
                     {experience.details.workIncluded.map((work, index) => (
                       <div key={index} className="flex flex-col md:flex-row gap-4 md:gap-6">
-                        <div className="text-[#555555] font-[family-name:var(--font-geist-mono)] text-[clamp(0.95rem,2vw,1.25rem)] shrink-0">
+                        <div className="text-fg-5 font-[family-name:var(--font-geist-mono)] text-[clamp(0.95rem,2vw,1.25rem)] shrink-0">
                           {String(index + 1).padStart(2, '0')}
                         </div>
                         <div>
-                          <h3 className="text-[clamp(0.95rem,2.2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] mb-3 text-[#eeeeee]">
+                          <h3 className="text-[clamp(0.95rem,2.2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] mb-3 text-fg">
                             {work.title}
                           </h3>
-                          <p className="text-[#a0a0a0] leading-relaxed text-[clamp(0.85rem,2vw,1rem)]">
+                          <p className="text-fg-3 leading-relaxed text-[clamp(0.85rem,2vw,1rem)]">
                             {work.description}
                           </p>
                         </div>

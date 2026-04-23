@@ -1,18 +1,27 @@
 import Hero from "./components/Hero";
-import WorkExperience from "./components/WorkExperience";
 import Skills from "./components/Skills";
 import Achievements from "./components/Achievements";
 import Footer from "./components/Footer";
+import Hero2 from "./components/v2/hero2";
+import TechStack2 from "./components/v2/tech-stack";
+import Experience2 from "./components/v2/experience2";
+import Achievements2 from "./components/v2/achievements2";
+import Footer2 from "./components/v2/footer2";
 export default function Home() {
   return (
-    <main className="flex flex-col w-screen justify-center items-center min-h-screen bg-black overflow-x-hidden">
-      <Hero />
-      <div className="flex flex-col w-full max-w-7xl px-6 sm:px-10 lg:px-24">
-        <WorkExperience />
+    <main className="flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-bg px-4 pt-12 sm:px-6 lg:px-8">
+      {/* <Hero />
+      <div className="flex flex-col w-full max-w-5xl px-6 sm:px-10 lg:px-24">
         <Skills />
         <Achievements />
         <Footer />
-      </div>
+      </div> */}
+      <Hero2 />
+      <TechStack2 />
+      <Experience2 />
+      <Achievements2 />
+      <Footer2 />
+
     </main>
   );
 }

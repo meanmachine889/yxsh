@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.jsdelivr.net',
         pathname: '/**',
       },
+
     ],
   },
 };

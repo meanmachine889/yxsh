@@ -6,9 +6,9 @@ import { skills } from "@/app/data/skills";
 
 export default function Skills() {
   return (
-    <section className="bg-black border-t border-dashed border-[#333333]  w-full py-12 sm:py-16 lg:py-20 text-white flex justify-center font-[family-name:var(--font-geist-sans)]">
+    <section className="bg-bg border-t border-dashed border-border-1  w-full py-12 sm:py-16 lg:py-20 text-fg flex justify-center font-[family-name:var(--font-geist-sans)]">
       <div className="w-full flex flex-col">
-        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight text-white mb-8 sm:mb-10">
+        <h2 className="text-[clamp(0.9rem,2vw,1.1rem)] font-[family-name:var(--font-geist-mono)] tracking-tight text-fg mb-8 sm:mb-10">
           Tech Stack
         </h2>
 
@@ -23,10 +23,10 @@ export default function Skills() {
                   src={skill.icon}
                   alt={`${skill.name} icon`}
                   fill
-                  className={`object-contain ${skill.invert ? 'invert' : ''}`}
+                  className={`skill-icon object-contain ${skill.invert ? 'invert' : ''}`}
                 />
               </div>
-              <span className="font-[family-name:var(--font-geist-mono)] text-[clamp(0.7rem,1.8vw,0.95rem)] text-[#888888] tracking-tight text-center">
+              <span className="font-[family-name:var(--font-geist-mono)] text-[clamp(0.7rem,1.8vw,0.95rem)] text-fg-3 tracking-tight text-center">
                 {skill.name}
               </span>
             </div>
