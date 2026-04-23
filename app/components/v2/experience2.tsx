@@ -191,13 +191,12 @@ export default function Experience2() {
                 <div className="flex w-full items-start justify-between gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
                   <div className="flex min-w-0 flex-1 flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
                     <div
-                      className={`relative w-8 h-8 rounded-md overflow-hidden shrink-0 ${
-                        exp.slug === "eventory"
+                      className={`relative w-8 h-8 rounded-md overflow-hidden shrink-0 ${exp.slug === "eventory"
                           ? "bg-purple-400"
                           : exp.slug === "yocket"
-                          ? "bg-orange-500"
-                          : "bg-fg/10"
-                      }`}
+                            ? "bg-orange-500"
+                            : "bg-fg/10"
+                        }`}
                     >
                       <Image
                         src={exp.logo}
@@ -211,13 +210,13 @@ export default function Experience2() {
                       />
                     </div>
                     <div className="flex min-w-0 flex-col text-left">
-                      <span className="text-[13px] font-medium tracking-tight text-fg sm:text-[14px]">
+                      <span className="text-[0.9rem] tracking-tight text-fg">
                         {exp.company}
                       </span>
-                      <span className="mt-0.5 text-[11.5px] text-fg-3 sm:text-[12px]">
+                      <span className="mt-0.5 text-[0.8rem] text-fg-3">
                         {exp.role}
                       </span>
-                      <div className="mt-1 flex flex-col items-start text-left text-[11.5px] text-fg-2 sm:hidden">
+                      <div className="mt-1 flex flex-col items-start text-left text-[0.8rem] text-fg-2 sm:hidden">
                         <span>{exp.date}</span>
                         <span className="mt-0.5 text-fg-3">{exp.location}</span>
                       </div>
@@ -226,23 +225,27 @@ export default function Experience2() {
 
                   <div className="ml-auto flex shrink-0 items-center gap-3 self-start pt-1 sm:self-auto sm:pt-0">
                     <div className="hidden flex-col items-start text-left sm:flex sm:items-end sm:text-right">
-                      <span className="text-[11.5px] text-fg-2 sm:text-[12.5px]">
+                      <span className="text-[0.85rem] text-fg-2">
                         {exp.date}
                       </span>
-                      <span className="mt-0.5 text-[11.5px] text-fg-3 sm:text-[12.5px]">
+                      <span className="mt-0.5 text-[0.85rem] text-fg-3">
                         {exp.location}
                       </span>
                     </div>
-                    <ArrowDown01Icon
-                      size={16}
-                      strokeWidth={1.75}
-                      className="text-fg-3 transition-transform duration-200 group-aria-expanded/accordion-trigger:rotate-180"
-                    />
+                    <div style={{
+                      backgroundColor: "var(--surface)", background: "color-mix(in srgb, var(--fg) 14%, var(--surface))"
+                    }} className="rounded-sm aspect-square flex items-center justify-center p-1 text-[0.75rem] text-fg backdrop-blur-sm">
+                      <ArrowDown01Icon
+                        size={16}
+                        strokeWidth={1.75}
+                        className="text-fg-3 transition-transform duration-200 group-aria-expanded/accordion-trigger:rotate-180"
+                      />
+                    </div>
                   </div>
                 </div>
               </AccordionTrigger>
 
-              <AccordionContent className="pb-5">
+              <AccordionContent className="pb-5 md:pt-3 pt-1 md:px-5 px-1">
                 {exp.details.techStack.length > 0 && (
                   <div className="mb-5 flex flex-wrap gap-2">
                     {exp.details.techStack.map((tech) => (
