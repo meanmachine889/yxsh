@@ -15,7 +15,7 @@ export function GraphicsCard({ url, className }: GraphicsCardProps) {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "relative block w-[260px] rounded-sm overflow-hidden border",
+        "relative block w-[260px] rounded-sm overflow-hidden",
         className
       )}
       style={{
