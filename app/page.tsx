@@ -9,7 +9,7 @@ import Achievements2 from "./components/v2/achievements2";
 import Footer2 from "./components/v2/footer2";
 export default function Home() {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-bg px-4 pt-12 sm:px-6 lg:px-8">
+    <main className="flex min-h-screen w-full flex-col items-center justify-center bg-bg px-4 pt-12 sm:px-6 lg:px-8">
       {/* <Hero />
       <div className="flex flex-col w-full max-w-5xl px-6 sm:px-10 lg:px-24">
         <Skills />
