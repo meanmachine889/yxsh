@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: "yash",
     template: "%s | Yash Bharadwaj"
   },
-  description: "Yash Bharadwaj is a skilled Full Stack Blockchain Developer specializing in Web3, DeFi, smart contracts, React, Next.js, and modern web technologies. Portfolio showcasing innovative blockchain solutions and full-stack development projects.",
+  description: "Yash Bharadwaj is a skilled Software Developer specializing in Web3, DeFi, smart contracts, React, Next.js, and modern web technologies. Portfolio showcasing innovative blockchain solutions and full-stack development projects.",
   keywords: [
     "Yash Bharadwaj",
     "Full Stack Developer",
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Yash Bharadwaj - Portfolio",
-    description: "Full Stack Blockchain Developer specializing in Web3, DeFi, smart contracts, and modern web technologies. Check out my work.",
+    title: "Yash Bharadwaj",
+    description: "a software developer genuinely interested in tech.",
     url: "https://yxsh.in",
     siteName: "Yash Bharadwaj Portfolio",
     images: [
