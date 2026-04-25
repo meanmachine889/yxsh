@@ -61,12 +61,6 @@ export const metadata: Metadata = {
   },
   category: "Technology",
 
-  icons: {
-    icon: "/logo.ico",
-    shortcut: "/logo.ico",
-    apple: "/logo.ico",
-  },
-
   openGraph: {
     title: "Yash Bharadwaj",
     description: "a software developer genuinely interested in tech.",
