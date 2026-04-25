@@ -56,7 +56,7 @@ export function XProfileCard({
               {verified && <VerifiedBadge className="size-3.5 text-[#1C9BF1]" />}
             </span>
             <span
-              className="-mt-0.5 text-[11px]"
+              className="-mt-4 text-[11px]"
               style={{ color: "var(--fg-3)" }}
             >
               @{handle}

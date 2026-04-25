@@ -83,10 +83,10 @@ export default function Hero2() {
       <div>
         I’m also building {" "}
         <Image
-          src="/logo-1024.png"
+          src="/shiplog-logo.png"
           alt="laptop"
-          width={20}
-          height={20}
+          width={30}
+          height={30}
           className="inline-block -translate-y-0.5 align-middle transition-transform hover:scale-110"
         />{" "} Shiplog, a tool that automates changelog generation so teams can focus more on shipping and less on documenting. Check out the <Link href="https://shiplog.today" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-blue-300" style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}>website</Link> or follow updates at <span
           className="relative"
@@ -113,7 +113,7 @@ export default function Hero2() {
             <XProfileCard
               name="Shiplog"
               handle="shiploggg"
-              avatar="https://unavatar.io/x/shiploggg"
+              avatar="https://pbs.twimg.com/profile_images/2048064078195941376/bjFys8uO_400x400.jpg"
               url="https://x.com/shiploggg"
               bio={[
                 { type: "text", text: "We automate your changelogs so you don't have to publish them manually" },
@@ -160,7 +160,7 @@ export default function Hero2() {
               }}
             >
               <SpotifyCard url="https://open.spotify.com/playlist/2Om35BZD8zdKnfrrSJNtHl" />
-            </div>
+              </div>
           </span>, or experimenting with video edits, <span
             className="relative"
             onMouseEnter={() => setShowGraphicsCard(true)}
