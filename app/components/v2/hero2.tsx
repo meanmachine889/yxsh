@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { XProfileCard } from "@/components/ui/x-profile-card";
 import { LinkedInProfileCard } from "@/components/ui/linkedin-profile-card";
 import { GithubCalendarCard } from "@/components/ui/github-calendar-card";
 import { GraphicsCard } from "@/components/ui/graphics-card";
 import { SpotifyCard } from "@/components/ui/spotify-card";
+import { Keycap } from "@/components/keycap";
+import { LedClock } from "@/components/led-clock";
 
 
 export default function Hero2() {
@@ -16,6 +18,21 @@ export default function Hero2() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const read = () =>
+      setTheme(
+        (document.documentElement.getAttribute("data-theme") as "light" | "dark") || "light"
+      );
+    read();
+    const observer = new MutationObserver(read);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
   const [showXCard, setShowXCard] = useState(false);
   const [showGhCard, setShowGhCard] = useState(false);
   const [showShiplogCard, setShowShiplogCard] = useState(false);
@@ -40,14 +57,24 @@ export default function Hero2() {
   };
   return (
     <div className="w-full max-w-3xl font-[family-name:var(--font-poppins)] text-fg-1 text-[0.94rem] leading-[1.55rem] space-y-[1.125rem] sm:text-[1.02rem] sm:leading-8 sm:space-y-6">
-      <Image
-        src="/psyduck.gif"
-        alt="laptop"
-        width={110}
-        height={110}
-          className="inline-block -ml-7"
-      />
+      <div className="flex justify-between items-start mt-7 w-full gap-2">
+        <Image
+          src="/psyduck.gif"
+          alt="laptop"
+          width={110}
+          height={110}
+          className="inline-block -ml-7 -mb-9 mt-6 sm:mt-3 md:mt-0 shrink-0"
+        />
+        <div className="origin-top-right scale-[0.8] md:scale-100 shrink-0">
+          <LedClock
+            size={200}         // outer width in px
+            format="24h"       // "24h" | "12h"
+            showDate={true}    // toggle the side date / day panel
+          />
+        </div>
+      </div>
       <p className="mb-9">Hey, I'm Yash Bharadwaj</p>
+
       <p>
         I’m a software developer{" "}
         <Image
@@ -123,6 +150,23 @@ export default function Hero2() {
         </span>.
       </div>
 
+      <div>
+        Apart from serious work, I like to play around and make things like{" "}
+        <span className="inline-block align-middle scale-[0.8] md:scale-100 -translate-y-0.5 mx-1">
+          <Keycap size={40} muted />
+        </span>{" "} or the clock you're seeing, check it out at{" "}
+        <Link
+          href="https://kinetic.yxsh.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:text-blue-300"
+          style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
+        >
+          kinetic.yxsh.in
+        </Link>
+        .
+      </div>
+
       <p>
         When I’m not coding, you’ll probably find me watching <Image
           src="/tv.png"
@@ -137,64 +181,62 @@ export default function Hero2() {
           height={20}
           className="inline-block -translate-y-1 align-middle transition-transform hover:scale-110"
         />{" "}  <span
-            className="relative"
-            onMouseEnter={() => setShowMusicCard(true)}
-            onMouseLeave={() => setShowMusicCard(false)}
+          className="relative"
+          onMouseEnter={() => setShowMusicCard(true)}
+          onMouseLeave={() => setShowMusicCard(false)}
+        >
+          <a
+            href="https://open.spotify.com/playlist/2Om35BZD8zdKnfrrSJNtHl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-blue-300 transition-colors"
+            style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
           >
-            <a
-              href="https://open.spotify.com/playlist/2Om35BZD8zdKnfrrSJNtHl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-blue-300 transition-colors"
-              style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
-            >
-              music
-            </a>
-            <div
-              className="hidden md:block absolute left-0 top-full z-40 pt-3"
-              style={{
-                opacity: showMusicCard ? 1 : 0,
-                transform: cardTransform(showMusicCard),
-                pointerEvents: showMusicCard ? "auto" : "none",
-                transition: CARD_TRANSITION,
-              }}
-            >
-              <SpotifyCard url="https://open.spotify.com/playlist/2Om35BZD8zdKnfrrSJNtHl" />
-              </div>
-          </span>, or experimenting with video edits, <span
-            className="relative"
-            onMouseEnter={() => setShowGraphicsCard(true)}
-            onMouseLeave={() => setShowGraphicsCard(false)}
+            music
+          </a>
+          <div
+            className="hidden md:block absolute left-0 top-full z-40 pt-3"
+            style={{
+              opacity: showMusicCard ? 1 : 0,
+              transform: cardTransform(showMusicCard),
+              pointerEvents: showMusicCard ? "auto" : "none",
+              transition: CARD_TRANSITION,
+            }}
           >
-            <a
-              href="https://in.pinterest.com/furiyash/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-blue-300 transition-colors"
-              style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
-            >
-              graphics
-            </a>
-            <div
-              className="hidden md:block absolute left-0 top-full z-40 pt-3"
-              style={{
-                opacity: showGraphicsCard ? 1 : 0,
-                transform: cardTransform(showGraphicsCard),
-                pointerEvents: showGraphicsCard ? "auto" : "none",
-                transition: CARD_TRANSITION,
-              }}
-            >
-              <GraphicsCard url="https://in.pinterest.com/furiyash/" />
-            </div>
-          </span>, and  <Image
+            <SpotifyCard url="https://open.spotify.com/playlist/2Om35BZD8zdKnfrrSJNtHl" />
+          </div>
+        </span>, or experimenting with video edits, <span
+          className="relative"
+          onMouseEnter={() => setShowGraphicsCard(true)}
+          onMouseLeave={() => setShowGraphicsCard(false)}
+        >
+          <a
+            href="https://in.pinterest.com/furiyash/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-blue-300 transition-colors"
+            style={{ textDecorationColor: "color-mix(in srgb, currentColor 25%, transparent)" }}
+          >
+            graphics
+          </a>
+          <div
+            className="hidden md:block absolute left-0 top-full z-40 pt-3"
+            style={{
+              opacity: showGraphicsCard ? 1 : 0,
+              transform: cardTransform(showGraphicsCard),
+              pointerEvents: showGraphicsCard ? "auto" : "none",
+              transition: CARD_TRANSITION,
+            }}
+          >
+            <GraphicsCard url="https://in.pinterest.com/furiyash/" />
+          </div>
+        </span>, and  <Image
           src="/draw.png"
           alt="laptop"
           width={22}
           height={22}
           className="inline-block -translate-y-1 align-middle transition-transform hover:scale-110"
         />{" "}sketches. </p>
-      <p>I enjoy being <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">creative</span> and exploring new hobbies from time to time.
-      </p>
       <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
         Reach me at{" "}
         <span

@@ -1,6 +1,3 @@
-import Hero from "./components/Hero";
-import Skills from "./components/Skills";
-import Achievements from "./components/Achievements";
 import Footer from "./components/Footer";
 import Hero2 from "./components/v2/hero2";
 import TechStack2 from "./components/v2/tech-stack";
