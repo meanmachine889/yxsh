@@ -153,7 +153,7 @@ export default function Hero2() {
       <div>
         Apart from serious work, I like to play around and make things like{" "}
         <span className="inline-block align-middle scale-[0.8] md:scale-100 -translate-y-0.5 mx-1">
-          <Keycap size={40} muted />
+          <Keycap size={40} />
         </span>{" "} or the clock you're seeing, check it out at{" "}
         <Link
           href="https://kinetic.yxsh.in"
