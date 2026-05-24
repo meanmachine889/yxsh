@@ -88,11 +88,11 @@ export default function TechStack2() {
     <div className="w-full max-w-2xl mt-8 font-[family-name:var(--font-poppins)] text-[0.88rem] leading-[1.5rem] text-fg-1 md:mt-9 md:text-[0.95rem] md:leading-[1.7rem]">
       <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1.5 md:gap-x-2 md:gap-y-2">
         My main tech stack includes
-        {techStack.slice(0, 6).map((tech) => (
+        {techStack.slice(0, 8).map((tech) => (
           <TechBadge key={tech.name} tech={tech} />
         ))}
         and I also work with
-        {techStack.slice(6).map((tech) => (
+        {techStack.slice(8).map((tech) => (
           <TechBadge key={tech.name} tech={tech} />
         ))}
         across different projects.

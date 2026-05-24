@@ -55,7 +55,7 @@ export default function Hero2() {
           href="https://www.integral.com/integral-launches-worlds-first-stablecoin-based-crypto-prime-broker/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+          className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
           style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
         >
           Integral
@@ -65,7 +65,7 @@ export default function Hero2() {
           href="https://www.primeone.net/?utm_source=pressrelease&utm_medium=referral&utm_campaign=launch"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+          className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
           style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
         >
           PrimeOne
@@ -84,7 +84,7 @@ export default function Hero2() {
             href="https://shiplog.today"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+            className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
             style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
           >
             Shiplog
@@ -122,7 +122,7 @@ export default function Hero2() {
             href="https://www.npmjs.com/package/scan-my-mcp"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+            className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
             style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
           >
             scan-my-mcp
@@ -141,7 +141,7 @@ export default function Hero2() {
               style={{ borderColor: "var(--border-1)", backgroundColor: "var(--bg)", boxShadow: "0 8px 28px rgba(0,0,0,0.10)" }}
             >
               <p className="text-[0.78rem] font-mono text-fg-2 mb-1">$ npx scan-my-mcp</p>
-              <p className="text-[0.72rem] text-fg-3">CLI tool · scans your MCP server for issues</p>
+              <p className="text-[0.72rem] text-fg-2">CLI tool · scans your MCP server for issues</p>
             </div>
           </div>
         </span>
@@ -155,7 +155,7 @@ export default function Hero2() {
             href="https://mcpscanner.yxsh.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+            className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
             style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
           >
             MCP Scanner
@@ -194,7 +194,7 @@ export default function Hero2() {
             href="https://open.spotify.com/playlist/2Om35BZD8zdKnfrrSJNtHl"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+            className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
             style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
           >
             music
@@ -219,7 +219,7 @@ export default function Hero2() {
             href="https://in.pinterest.com/furiyash/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+            className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
             style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
           >
             graphics
@@ -247,7 +247,7 @@ export default function Hero2() {
             href="https://x.com/furiyash"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+            className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
             style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
           >
             @furiyash
@@ -286,7 +286,7 @@ export default function Hero2() {
             href="https://github.com/meanmachine889"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+            className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
             style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
           >
             github
@@ -311,7 +311,7 @@ export default function Hero2() {
           <button
             type="button"
             onClick={copyEmail}
-            className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors cursor-pointer"
+            className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors cursor-pointer"
             style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
           >
             email
@@ -343,7 +343,7 @@ export default function Hero2() {
             href="https://linkedin.com/in/yash-bharadwaj-47871b251"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-3 underline underline-offset-2 hover:text-blue-400 transition-colors"
+            className="text-fg-2 underline underline-offset-2 hover:text-blue-400 transition-colors"
             style={{ textDecorationColor: "color-mix(in srgb, currentColor 30%, transparent)" }}
           >
             LinkedIn

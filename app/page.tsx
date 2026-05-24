@@ -1,8 +1,6 @@
 import Hero2 from "./components/v2/hero2";
 import TechStack2 from "./components/v2/tech-stack";
 import Experience2 from "./components/v2/experience2";
-import Projects2 from "./components/v2/projects2";
-import Achievements2 from "./components/v2/achievements2";
 import Footer2 from "./components/v2/footer2";
 export default function Home() {
   return (
@@ -10,8 +8,6 @@ export default function Home() {
       <Hero2 />
       <TechStack2 />
       <Experience2 />
-      {/* <Projects2 /> */}
-      <Achievements2 />
       <Footer2 />
     </main>
   );
