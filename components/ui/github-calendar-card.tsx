@@ -10,14 +10,16 @@ interface Props {
 }
 
 export function GithubCalendarCard({ username, className }: Props) {
-  const [colorScheme, setColorScheme] = useState<"light" | "dark">("light");
+  const [mounted, setMounted] = useState(false);
+  const [colorScheme, setColorScheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     const read = () =>
       setColorScheme(
-        (document.documentElement.getAttribute("data-theme") as "light" | "dark") || "light"
+        (document.documentElement.getAttribute("data-theme") as "light" | "dark") || "dark"
       );
     read();
+    setMounted(true);
     const observer = new MutationObserver(read);
     observer.observe(document.documentElement, {
       attributes: true,
@@ -25,6 +27,16 @@ export function GithubCalendarCard({ username, className }: Props) {
     });
     return () => observer.disconnect();
   }, []);
+
+  if (!mounted) return (
+    <div
+      className={cn("rounded-xl p-4 backdrop-blur-md border", className)}
+      style={{
+        backgroundColor: "color-mix(in srgb, var(--bg) 92%, transparent)",
+        borderColor: "var(--border-2)",
+      }}
+    />
+  );
 
   return (
     <div

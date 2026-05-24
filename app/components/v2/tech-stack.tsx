@@ -65,23 +65,28 @@ const techStack: Tech[] = [
 
 function TechBadge({ tech }: { tech: Tech }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-md border border-dashed border-border-1 bg-fg/5 px-2 py-0.5 text-[0.75rem] leading-none backdrop-blur-sm sm:gap-2 sm:px-3 sm:py-[3px] sm:text-[0.82rem] sm:leading-normal">
+    <span className="group inline-flex cursor-pointer items-center rounded-md border border-dashed border-border-1 bg-fg/5 px-2 py-0.5 backdrop-blur-sm sm:px-3 sm:py-[3px]">
       <Image
         src={tech.icon}
         alt={tech.name}
         width={14}
         height={14}
-        className={tech.invert ? "tech-icon invert opacity-90" : "tech-icon"}
+        className={`shrink-0 ${tech.invert ? "tech-icon invert opacity-90" : "tech-icon"}`}
       />
-      <span>{tech.name}</span>
+      <span
+        className="max-w-0 overflow-hidden whitespace-nowrap text-[0.7rem] leading-none sm:text-[0.76rem] sm:leading-normal group-hover:max-w-[120px] group-hover:ml-1.5 sm:group-hover:ml-2"
+        style={{ transition: "max-width 420ms cubic-bezier(0.4,0,0.2,1), margin 420ms cubic-bezier(0.4,0,0.2,1)" }}
+      >
+        {tech.name}
+      </span>
     </span>
   );
 }
 
 export default function TechStack2() {
   return (
-    <div className="w-full max-w-3xl mt-8 font-[family-name:var(--font-poppins)] text-[0.94rem] leading-[1.55rem] text-fg-1 sm:mt-9 sm:text-[1.02rem] sm:leading-[1.75rem]">
-      <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1.5 sm:gap-x-2 sm:gap-y-2">
+    <div className="w-full max-w-2xl mt-8 font-[family-name:var(--font-poppins)] text-[0.88rem] leading-[1.5rem] text-fg-1 md:mt-9 md:text-[0.95rem] md:leading-[1.7rem]">
+      <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1.5 md:gap-x-2 md:gap-y-2">
         My main tech stack includes
         {techStack.slice(0, 6).map((tech) => (
           <TechBadge key={tech.name} tech={tech} />

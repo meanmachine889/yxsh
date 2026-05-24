@@ -30,12 +30,12 @@ export default function Footer2() {
   };
 
   return (
-    <section className="relative w-full max-w-3xl mt-16 mb-14 font-[family-name:var(--font-poppins)] text-[1.02rem] leading-[1.75rem] text-fg-1 space-y-4 sm:mt-20 sm:mb-16">
-      <p className="text-fg-1 text-[1.02rem]">
+    <section className="relative w-full max-w-2xl mt-12 mb-12 font-[family-name:var(--font-poppins)] text-[0.95rem] leading-[1.7rem] text-fg-1 space-y-4 md:mt-14 md:mb-14">
+      <p className="text-fg-1 text-[0.95rem]">
         Got an idea, a role, or just want to chat — my inbox is always open.
       </p>
 
-      <div className="flex flex-wrap items-center gap-x-1 gap-y-2 pt-2 text-[1.02rem]">
+      <div className="flex flex-wrap items-center gap-x-1 gap-y-2 pt-2 text-[0.95rem]">
         Find me at{" "}
         <span
           className="relative"
@@ -116,7 +116,7 @@ export default function Footer2() {
             email
           </button>
           <span
-            className="absolute left-1/2 bottom-full z-40 mb-2 hidden -translate-x-1/2 whitespace-nowrap rounded-md border px-2 py-1 text-[0.82rem] md:block"
+            className="absolute left-1/2 bottom-full z-40 mb-2 hidden -translate-x-1/2 whitespace-nowrap rounded-md border px-2 py-1 text-[0.76rem] md:block"
             style={{
               backgroundColor: "color-mix(in srgb, var(--bg) 92%, transparent)",
               borderColor: "var(--border-2)",

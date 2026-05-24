@@ -4,6 +4,7 @@ export interface DescPart {
 }
 
 export interface Project {
+  slug: string;
   name: string;
   description: DescPart[];
   video: string;
@@ -18,6 +19,7 @@ export interface FrontendProject {
 
 export const projects: Project[] = [
   {
+    slug: "uptime-monitor",
     name: "Decentralized Uptime Monitor",
     description: [
       { text: "A " },
@@ -35,6 +37,7 @@ export const projects: Project[] = [
     githubLink: "https://github.com/meanmachine889/Decentralized-uptime-monitor",
   },
   {
+    slug: "task-engine",
     name: "Go Distributed Task Engine",
     description: [
       { text: "Built a " },

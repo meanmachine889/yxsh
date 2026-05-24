@@ -74,7 +74,6 @@ export default function FloatingNav() {
 
   const items = [
     { id: "home", href: "/", Icon: Home01Icon },
-    { id: "projects", href: "/projects", Icon: CodeIcon },
     { id: "resume", href: "/resume", Icon: NoteIcon },
   ];
 

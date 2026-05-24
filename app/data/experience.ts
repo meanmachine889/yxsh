@@ -4,7 +4,7 @@ export const experiences = [
     company: "Integral Development Corp.",
     date: "May 2025 \u2013 Present",
     role: "Software Developer",
-    location: "Palo Alto, California, USA (Remote)",
+    location: "USA",
     logo: "https://res.cloudinary.com/dnfv0h10u/image/upload/v1748154335/integral_a0tnk8.jpg",
     details: {
       duration: "Present",
@@ -18,7 +18,7 @@ export const experiences = [
     company: "Eventory",
     date: "May 2024 \u2013 May 2025",
     role: "Software Developer",
-    location: "Mumbai, India (Remote)",
+    location: "India",
     logo: "https://res.cloudinary.com/dnfv0h10u/image/upload/v1747994130/eventory_zqbrwo.png",
     details: {
       duration: "May 2024 \u2013 May 2025 (1 year)",
@@ -56,7 +56,7 @@ export const experiences = [
     company: "Yocket",
     date: "May 2024 \u2013 Aug 2024",
     role: "Fullstack Web Developer",
-    location: "New Delhi, India (Remote)",
+    location: "India",
     logo: "https://res.cloudinary.com/dnfv0h10u/image/upload/v1757053683/yocket-removebg-preview_pzxfkq.png",
     details: {
       duration: "May 2024 \u2013 Aug 2024 (4 months)",

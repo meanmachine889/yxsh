@@ -6,7 +6,8 @@ import { VerifiedBadge } from "./tweet";
 
 type BioPart =
   | { type: "text"; text: string }
-  | { type: "mention"; handle: string };
+  | { type: "mention"; handle: string }
+  | { type: "url"; href: string; text: string };
 
 interface XProfileCardProps {
   name: string;
@@ -88,6 +89,17 @@ export function XProfileCard({
               style={{ color: "#1C9BF1" }}
             >
               @{part.handle}
+            </a>
+          ) : part.type === "url" ? (
+            <a
+              key={i}
+              href={part.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+              style={{ color: "#1C9BF1" }}
+            >
+              {part.text}
             </a>
           ) : (
             <span key={i}>{part.text}</span>
