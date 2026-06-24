@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { XProfileCard } from "@/components/ui/x-profile-card";
 import { GithubCalendarCard } from "@/components/ui/github-calendar-card";
 import { LinkedInProfileCard } from "@/components/ui/linkedin-profile-card";
 
 const EMAIL = "bharadwajj131@gmail.com";
+const COUNTER_URL = "https://abacus.jasoncameron.dev/hit/yxsh.in/visits";
 const CARD_TRANSITION =
   "opacity 240ms cubic-bezier(0.16, 1, 0.3, 1), transform 240ms cubic-bezier(0.16, 1, 0.3, 1)";
 
@@ -16,7 +17,16 @@ export default function Footer2() {
   const [showEmailTip, setShowEmailTip] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
   const [showLinkedInCard, setShowLinkedInCard] = useState(false);
-  
+  const [visits, setVisits] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch(COUNTER_URL)
+      .then((r) => r.json())
+      .then((data: { value?: number }) => {
+        if (typeof data.value === "number") setVisits(data.value);
+      })
+      .catch(() => {});
+  }, []);
 
   const cardTransform = (visible: boolean) =>
     visible ? "translateY(0) scale(1)" : "translateY(6px) scale(0.98)";
@@ -165,6 +175,11 @@ export default function Footer2() {
                   </div>
                 </span>.
       </div>
+      {visits !== null && (
+        <p className="text-fg-2 text-[0.95rem]">
+          Total Visits: {visits.toLocaleString()}
+        </p>
+      )}
       <Image
         src="/charmander.gif" // change to your asset
         alt="footer decoration"
