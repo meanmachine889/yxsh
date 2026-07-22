@@ -40,12 +40,12 @@ export default function Footer2() {
   };
 
   return (
-    <section className="relative w-full max-w-2xl mt-12 mb-12 font-[family-name:var(--font-poppins)] text-[0.95rem] leading-[1.7rem] text-fg-1 space-y-4 md:mt-14 md:mb-14">
-      <p className="text-fg-1 text-[0.95rem]">
+    <section className="relative w-full text-[0.9rem] leading-[1.55rem] md:text-[0.95rem] md:leading-[1.65rem] text-fg-2 space-y-3">
+      <p className="text-fg-1 text-[0.9rem] md:text-[0.95rem]">
         Got an idea, a role, or just want to chat — my inbox is always open.
       </p>
 
-      <div className="flex flex-wrap items-center gap-x-1 gap-y-2 pt-2 text-[0.95rem]">
+      <div className="flex flex-wrap items-center gap-x-1 gap-y-2 pt-2 text-[0.9rem] md:text-[0.95rem]">
         Find me at{" "}
         <span
           className="relative"
@@ -176,17 +176,17 @@ export default function Footer2() {
                 </span>.
       </div>
       {visits !== null && (
-        <p className="text-fg-2 text-[0.95rem]">
-          Total Visits: {visits.toLocaleString()}
+        <p className="text-fg-3 text-[0.8rem] font-[family-name:var(--font-geist-mono)] tabular-nums">
+          Total visits: {visits.toLocaleString()}
         </p>
       )}
-      <Image
+      {/* <Image
         src="/charmander.gif" // change to your asset
         alt="footer decoration"
         width={90}
         height={90}
         className="absolute md:bottom-2 right-0 opacity-80 pointer-events-none select-none"
-      />
+      /> */}
     </section>
   );
 }
