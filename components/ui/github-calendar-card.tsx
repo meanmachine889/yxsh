@@ -14,10 +14,12 @@ export function GithubCalendarCard({ username, className }: Props) {
   const [colorScheme, setColorScheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
-    const read = () =>
-      setColorScheme(
-        (document.documentElement.getAttribute("data-theme") as "light" | "dark") || "dark"
-      );
+    const read = () => {
+      const theme = document.documentElement.getAttribute("data-theme");
+      // The calendar only understands "light" | "dark". "deskmat" is a dark
+      // green mat with light text, so it uses the dark scheme.
+      setColorScheme(theme === "light" ? "light" : "dark");
+    };
     read();
     setMounted(true);
     const observer = new MutationObserver(read);

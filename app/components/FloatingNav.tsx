@@ -10,9 +10,10 @@ import {
   Briefcase01Icon,
   Sun01Icon,
   Moon02Icon,
+  Grid02Icon,
 } from "hugeicons-react";
 
-type Theme = "light" | "dark";
+type Theme = "light" | "dark" | "deskmat";
 
 const PILL_SHADOW =
   "inset 0 1px 0 0 color-mix(in srgb, var(--fg) 8%, transparent), " +
@@ -64,7 +65,9 @@ export default function FloatingNav() {
   };
 
   const toggleTheme = () => {
-    const next: Theme = theme === "dark" ? "light" : "dark";
+    const themes: Theme[] = ["light", "dark", "deskmat"];
+    const currentIndex = themes.indexOf(theme);
+    const next: Theme = themes[(currentIndex + 1) % themes.length];
     document.documentElement.setAttribute("data-theme", next);
     try {
       localStorage.setItem("theme", next);
@@ -128,7 +131,13 @@ export default function FloatingNav() {
           }}
         >
           {mounted ? (
-            theme === "dark" ? <Moon02Icon size={14} strokeWidth={1.75} /> : <Sun01Icon size={14} strokeWidth={1.75} />
+            theme === "dark" ? (
+              <Moon02Icon size={14} strokeWidth={1.75} />
+            ) : theme === "deskmat" ? (
+              <Grid02Icon size={14} strokeWidth={1.75} />
+            ) : (
+              <Sun01Icon size={14} strokeWidth={1.75} />
+            )
           ) : (
             <Sun01Icon size={14} strokeWidth={1.75} />
           )}

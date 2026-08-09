@@ -34,6 +34,21 @@
   --border-3: #2c2c2c;
 }
 
+[data-theme="deskmat"] {
+  /* deep, slightly desaturated forest green like a self-healing PVC mat */
+  --bg: #16352a;
+  --surface: #1f4536;
+  --fg: #eef3f0;
+  --fg-2: #cfe0d8;
+  --fg-3: #8fa89c;
+  --fg-4: #6e877b;
+  --fg-5: #5c7568;
+  --fg-6: #4a6356;
+  --border-1: #345247;
+  --border-2: #2b473c;
+  --border-3: #233c32;
+}
+
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
@@ -103,6 +118,109 @@ body {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-feature-settings: "cv05", "cv11";
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Deskmat theme: self-healing cutting-mat surface in the gutters only.
+   The grid is an ABSOLUTE, page-tall overlay clipped to the two side gutters
+   with a horizontal mask, so it never touches the centered reading column —
+   no masking element needed, the reading area is simply never painted.
+   Because it's absolutely positioned to the body (not fixed to the viewport),
+   the grid scrolls with the page.
+
+   The mat is built from three stacked layers:
+     1. fine MINOR grid   — small squares, faint lines
+     2. bold MAJOR grid   — every 5th line, brighter (the printed rulers)
+     3. soft radial vignette — lighter center, darker edges (the PVC sheen) */
+[data-theme="deskmat"] {
+  --mat-minor: rgba(228, 240, 234, 0.10); /* faint fine lines */
+  --mat-major: rgba(228, 240, 234, 0.22); /* brighter ruled lines */
+  --mat-edge:  rgba(228, 240, 234, 0.42); /* bright cut-line bordering column */
+  --mat-minor-size: 12px;                  /* small square */
+  --mat-major-size: 60px;                  /* 5 minor squares */
+  --mat-line: 1px;
+  --mat-col: 42rem;                        /* reading column width = max-w-2xl */
+}
+
+/* Body becomes the positioning context so the absolute grid overlay below
+   spans the full document height and scrolls with the page. */
+[data-theme="deskmat"] body {
+  position: relative;
+}
+
+[data-theme="deskmat"] body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    /* 3 — sheen vignette: lighter in the middle, mat darkens toward edges */
+    radial-gradient(120% 90% at 50% 35%,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 45%,
+      rgba(0, 0, 0, 0.18) 100%),
+    /* 2 — MAJOR ruled grid */
+    linear-gradient(90deg, var(--mat-major) var(--mat-line), transparent var(--mat-line)),
+    linear-gradient(0deg,  var(--mat-major) var(--mat-line), transparent var(--mat-line)),
+    /* 1 — MINOR fine grid */
+    linear-gradient(90deg, var(--mat-minor) var(--mat-line), transparent var(--mat-line)),
+    linear-gradient(0deg,  var(--mat-minor) var(--mat-line), transparent var(--mat-line));
+  background-size:
+    100% 100%,
+    var(--mat-major-size) var(--mat-major-size),
+    var(--mat-major-size) var(--mat-major-size),
+    var(--mat-minor-size) var(--mat-minor-size),
+    var(--mat-minor-size) var(--mat-minor-size);
+  /* Punch a transparent window over the centered reading column so the grid
+     is only ever visible in the left/right gutters. */
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    #000 0,
+    #000 calc(50% - var(--mat-col) / 2),
+    transparent calc(50% - var(--mat-col) / 2),
+    transparent calc(50% + var(--mat-col) / 2),
+    #000 calc(50% + var(--mat-col) / 2),
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    #000 0,
+    #000 calc(50% - var(--mat-col) / 2),
+    transparent calc(50% - var(--mat-col) / 2),
+    transparent calc(50% + var(--mat-col) / 2),
+    #000 calc(50% + var(--mat-col) / 2),
+    #000 100%
+  );
+}
+
+/* Two bright vertical cut-lines bordering the centered reading column, so the
+   column reads as a masked-off window carved out of the mat. Drawn as their own
+   full-height, page-tall overlay (scrolls with the page like the grid) using
+   hard-stop gradients pinned exactly at the reading-column edges. */
+[data-theme="deskmat"] body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: linear-gradient(
+    90deg,
+    transparent calc(50% - var(--mat-col) / 2 - var(--mat-line)),
+    var(--mat-edge) calc(50% - var(--mat-col) / 2 - var(--mat-line)),
+    var(--mat-edge) calc(50% - var(--mat-col) / 2),
+    transparent calc(50% - var(--mat-col) / 2),
+    transparent calc(50% + var(--mat-col) / 2),
+    var(--mat-edge) calc(50% + var(--mat-col) / 2),
+    var(--mat-edge) calc(50% + var(--mat-col) / 2 + var(--mat-line)),
+    transparent calc(50% + var(--mat-col) / 2 + var(--mat-line))
+  );
+}
+
+/* The page wrapper normally paints an opaque bg over the whole viewport.
+   Keep it transparent under deskmat so the gutter grid shows through
+   (the body still supplies the base mat color). */
+[data-theme="deskmat"] main.bg-bg {
+  background: transparent;
 }
 
 /* Kinetic keyword chip — warm orange tile with white embossed text,
